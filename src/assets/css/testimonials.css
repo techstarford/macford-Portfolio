@@ -1,0 +1,352 @@
+:root {
+  --primary: #6c63ff;
+  --primary-dark: #564fcc;
+  --secondary: #ff6584;
+  --dark: #1a1a2e;
+  --darker: #16213e;
+  --light: #f8f9fa;
+  --gray: #6c757d;
+
+  --font-main: "Space Grotesk", sans-serif;
+  --font-secondary: "Poppins", sans-serif;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  background-color: rgba(26, 26, 46, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  box-shadow: var(--shadow-md);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--font-main);
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: var(--light);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Add these new styles for the testimonials page */
+.testimonials-hero {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--darker), var(--dark));
+  margin-top: 80px;
+  text-align: center;
+}
+
+.testimonial-card {
+  background: var(--dark);
+  border-radius: 10px;
+  padding: 40px;
+  margin: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.testimonial-card:before {
+  content: '"';
+  font-size: 120px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: rgba(108, 99, 255, 0.1);
+  font-family: serif;
+  line-height: 1;
+}
+
+.testimonial-content {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 3px solid var(--primary);
+}
+
+.author-info h4 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.author-info p {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.testimonial-rating {
+  color: #ffc107;
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.testimonials-slider .slick-dots {
+  bottom: -50px;
+}
+
+.testimonials-slider .slick-dots li button:before {
+  color: var(--light);
+  opacity: 0.5;
+  font-size: 10px;
+}
+
+.testimonials-slider .slick-dots li.slick-active button:before {
+  color: var(--primary);
+  opacity: 1;
+}
+
+.stats-section {
+  background: var(--darker);
+  padding: 80px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 30px;
+  background: rgba(108, 99, 255, 0.1);
+  border-radius: 10px;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-family: var(--font-main);
+}
+
+.stat-label {
+  color: var(--light);
+  font-size: 1.1rem;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  padding: 80px 0;
+  text-align: center;
+}
+
+/* Footer */
+footer {
+  background-color: var(--darker);
+  padding: 50px 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  font-family: var(--font-main);
+  margin-bottom: 1rem;
+}
+
+.footer-logo span {
+  color: var(--primary);
+}
+
+.footer-about p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.footer-links h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.footer-links h3::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background-color: var(--primary);
+  border-radius: 2px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+  padding-left: 5px;
+}
+
+.footer-newsletter p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1.5rem;
+}
+
+.newsletter-form {
+  display: flex;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px 0 0 5px;
+  color: var(--light);
+  font-family: var(--font-secondary);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.newsletter-btn {
+  padding: 0 20px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+}

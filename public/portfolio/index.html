@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macford | Portfolio - Full-Stack Developer & Creative Coder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel = "stylesheet" href ="/src/assets/css/portfolio.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Mac<span>ford</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="coding-resources.html">Resources</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Portfolio Hero -->
+    <section class="portfolio-hero">
+        <div class="container">
+            <div class="portfolio-hero-content">
+                <h1 class="portfolio-hero-title">My <span class="text-gradient">Portfolio</span></h1>
+                <p class="portfolio-hero-subtitle">A collection of my best work and projects I've contributed to</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+            <p class="section-subtitle">Here's a selection of my recent work. Click on any project to view more details.</p>
+            
+            <div class="portfolio-filter">
+                <button class="portfolio-filter-btn active" data-filter="all">All</button>
+                <button class="portfolio-filter-btn" data-filter="web">Web Development</button>
+                <button class="portfolio-filter-btn" data-filter="design">UI/UX Design</button>
+                <button class="portfolio-filter-btn" data-filter="video">Video Editing</button>
+                <button class="portfolio-filter-btn" data-filter="mobile">Mobile Apps</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-grid-item" data-category="web" data-project="ecommerce">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="E-commerce Platform" class="portfolio-grid-img">
+                    <div class="portfolio-grid-overlay">
+                        <h4 class="portfolio-grid-title">E-commerce Platform</h4>
+                        <span class="portfolio-grid-category">Web Development</span>
+                        <div class="portfolio-grid-links">
+                            <a href="#" class="view-project" title="View Details"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="View Live"><i class="fas fa-link"></i></a>
+                            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-grid-item" data-category="design" data-project="mobile-app">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Mobile App UI Design" class="portfolio-grid-img">
+                    <div class="portfolio-grid-overlay">
+                        <h4 class="portfolio-grid-title">Mobile App UI Design</h4>
+                        <span class="portfolio-grid-category">UI/UX Design</span>
+                        <div class="portfolio-grid-links">
+                            <a href="#" class="view-project" title="View Details"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="Figma"><i class="fab fa-figma"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-grid-item" data-category="web" data-project="portfolio-template">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" alt="Developer Portfolio Template" class="portfolio-grid-img">
+                    <div class="portfolio-grid-overlay">
+                        <h4 class="portfolio-grid-title">Developer Portfolio Template</h4>
+                        <span class="portfolio-grid-category">Web Development</span>
+                        <div class="portfolio-grid-links">
+                            <a href="#" class="view-project" title="View Details"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="View Live"><i class="fas fa-link"></i></a>
+                            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="portfolio-grid-item" data-category="video" data-project="coding-tutorial">
+                    <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Coding Tutorial Series" class="portfolio-grid-img">
+                    <div class="portfolio-grid-overlay">
+                        <h4 class="portfolio-grid-title">Coding Tutorial Series</h4>
+                        <span class="portfolio-grid-category">Video Editing</span>
+                        <div class="portfolio-grid-links">
+                            <a href="#" class="view-project" title="View Details"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="Watch"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="portfolio-grid-item" data-category="web" data-project="task-app">
+                    <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" alt="Task Management App" class="portfolio-grid-img">
+                    <div class="portfolio-grid-overlay">
+                        <h4 class="portfolio-grid-title">Task Management App</h4>
+                        <span class="portfolio-grid-category">Web Development</span>
+                        <div class="portfolio-grid-links">
+                            <a href="#" class="view-project" title="View Details"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="View Live"><i class="fas fa-link"></i></a>
+                            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="portfolio-grid-item" data-category="design" data-project="dashboard-ui">
+                    <img src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dashboard UI Kit" class="portfolio-grid-img">
+                    <div class="portfolio-grid-overlay">
+                        <h4 class="portfolio-grid-title">Dashboard UI Kit</h4>
+                        <span class="portfolio-grid-category">UI/UX Design</span>
+                        <div class="portfolio-grid-links">
+                            <a href="#" class="view-project" title="View Details"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="Figma"><i class="fab fa-figma"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 7 -->
+                <div class="portfolio-grid-item" data-category="mobile" data-project="fitness-app">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Fitness Mobile App" class="portfolio-grid-img">
+                    <div class="portfolio-grid-overlay">
+                        <h4 class="portfolio-grid-title">Fitness Mobile App</h4>
+                        <span class="portfolio-grid-category">Mobile App Development</span>
+                        <div class="portfolio-grid-links">
+                            <a href="#" class="view-project" title="View Details"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="App Store"><i class="fab fa-apple"></i></a>
+                            <a href="#" title="Play Store"><i class="fab fa-google-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 8 -->
+                <div class="portfolio-grid-item" data-category="web" data-project="cms">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" alt="Custom CMS" class="portfolio-grid-img">
+                    <div class="portfolio-grid-overlay">
+                        <h4 class="portfolio-grid-title">Custom CMS</h4>
+                        <span class="portfolio-grid-category">Web Development</span>
+                        <div class="portfolio-grid-links">
+                            <a href="#" class="view-project" title="View Details"><i class="fas fa-eye"></i></a>
+                            <a href="#" title="View Live"><i class="fas fa-link"></i></a>
+                            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modals -->
+    <!-- E-commerce Platform Modal -->
+    <div id="ecommerce-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-close">&times;</div>
+            <div class="modal-header">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="E-commerce Platform" class="modal-header-img">
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">E-commerce Platform</h2>
+                <span class="modal-subtitle">Web Development</span>
+                
+                <!-- Engagement Buttons -->
+                <div class="modal-engagement">
+                    <div class="views-count">
+                        <i class="fas fa-eye"></i> <span class="views-number">1,245</span> views
+                    </div>
+                    <button class="action-btn like-btn" data-project="ecommerce">
+                        <i class="far fa-heart"></i> Like <span class="count">256</span>
+                    </button>
+                    <button class="action-btn favorite-btn" data-project="ecommerce">
+                        <i class="far fa-star"></i> Favorite <span class="count">189</span>
+                    </button>
+                    <button class="action-btn download-btn" data-project="ecommerce">
+                        <i class="fas fa-download"></i> Download <span class="count">543</span>
+                    </button>
+                </div>
+                
+                <p class="modal-description">
+                    A full-featured e-commerce platform built with React, Node.js, and MongoDB. The platform includes product listings, shopping cart functionality, user authentication, payment processing, and an admin dashboard for managing products and orders.
+                </p>
+                
+                <div class="modal-details">
+                    <div class="modal-detail-item">
+                        <h4>Client</h4>
+                        <p>Fashion Boutique Inc.</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Date</h4>
+                        <p>March 2023</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Role</h4>
+                        <p>Full-Stack Developer</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Website</h4>
+                        <p><a href="#" target="_blank">www.fashionboutique.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="modal-tech-stack">
+                    <h3>Technologies Used</h3>
+                    <div class="modal-tech-stack-items">
+                        <span class="modal-tech-stack-item">React.js</span>
+                        <span class="modal-tech-stack-item">Node.js</span>
+                        <span class="modal-tech-stack-item">Express</span>
+                        <span class="modal-tech-stack-item">MongoDB</span>
+                        <span class="modal-tech-stack-item">Redux</span>
+                        <span class="modal-tech-stack-item">Stripe API</span>
+                        <span class="modal-tech-stack-item">JWT</span>
+                    </div>
+                </div>
+                
+                <div class="modal-gallery">
+                    <h3>Project Gallery</h3>
+                    <div class="modal-gallery-grid">
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="E-commerce Homepage" class="modal-gallery-img">
+                        </div>
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Product Page" class="modal-gallery-img">
+                        </div>
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Shopping Cart" class="modal-gallery-img">
+                        </div>
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Admin Dashboard" class="modal-gallery-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <a href="#" class="btn btn-primary" target="_blank">Visit Live Site</a>
+                    <a href="#" class="btn btn-outline" target="_blank">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mobile App UI Design Modal -->
+    <div id="mobile-app-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-close">&times;</div>
+            <div class="modal-header">
+                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Mobile App UI Design" class="modal-header-img">
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">Mobile App UI Design</h2>
+                <span class="modal-subtitle">UI/UX Design</span>
+                
+                <!-- Engagement Buttons -->
+                <div class="modal-engagement">
+                    <div class="views-count">
+                        <i class="fas fa-eye"></i> <span class="views-number">892</span> views
+                    </div>
+                    <button class="action-btn like-btn" data-project="mobile-app">
+                        <i class="far fa-heart"></i> Like <span class="count">187</span>
+                    </button>
+                    <button class="action-btn favorite-btn" data-project="mobile-app">
+                        <i class="far fa-star"></i> Favorite <span class="count">134</span>
+                    </button>
+                    <button class="action-btn download-btn" data-project="mobile-app">
+                        <i class="fas fa-download"></i> Download <span class="count">321</span>
+                    </button>
+                </div>
+                
+                <p class="modal-description">
+                    A complete UI/UX design for a mobile banking application. The design focuses on creating a seamless user experience for managing finances, making transfers, and tracking expenses. The clean, modern interface prioritizes usability while maintaining a premium feel.
+                </p>
+                
+                <div class="modal-details">
+                    <div class="modal-detail-item">
+                        <h4>Client</h4>
+                        <p>FinTech Solutions</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Date</h4>
+                        <p>January 2023</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Role</h4>
+                        <p>UI/UX Designer</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Prototype</h4>
+                        <p><a href="#" target="_blank">View on Figma</a></p>
+                    </div>
+                </div>
+                
+                <div class="modal-tech-stack">
+                    <h3>Tools Used</h3>
+                    <div class="modal-tech-stack-items">
+                        <span class="modal-tech-stack-item">Figma</span>
+                        <span class="modal-tech-stack-item">Adobe XD</span>
+                        <span class="modal-tech-stack-item">Photoshop</span>
+                        <span class="modal-tech-stack-item">Illustrator</span>
+                        <span class="modal-tech-stack-item">User Testing</span>
+                    </div>
+                </div>
+                
+                <div class="modal-gallery">
+                    <h3>Design Screens</h3>
+                    <div class="modal-gallery-grid">
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Login Screen" class="modal-gallery-img">
+                        </div>
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Dashboard" class="modal-gallery-img">
+                        </div>
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Transfer Flow" class="modal-gallery-img">
+                        </div>
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Settings" class="modal-gallery-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <a href="#" class="btn btn-primary" target="_blank">View Prototype</a>
+                    <a href="#" class="btn btn-outline" target="_blank">Download Case Study</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Developer Portfolio Template Modal -->
+    <div id="portfolio-template-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-close">&times;</div>
+            <div class="modal-header">
+                <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" alt="Developer Portfolio Template" class="modal-header-img">
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title">Developer Portfolio Template</h2>
+                <span class="modal-subtitle">Web Development</span>
+                
+                <!-- Engagement Buttons -->
+                <div class="modal-engagement">
+                    <div class="views-count">
+                        <i class="fas fa-eye"></i> <span class="views-number">1,532</span> views
+                    </div>
+                    <button class="action-btn like-btn" data-project="portfolio-template">
+                        <i class="far fa-heart"></i> Like <span class="count">423</span>
+                    </button>
+                    <button class="action-btn favorite-btn" data-project="portfolio-template">
+                        <i class="far fa-star"></i> Favorite <span class="count">298</span>
+                    </button>
+                    <button class="action-btn download-btn" data-project="portfolio-template">
+                        <i class="fas fa-download"></i> Download <span class="count">1,200</span>
+                    </button>
+                </div>
+                
+                <p class="modal-description">
+                    A responsive portfolio template designed specifically for developers and designers. The template features a clean, modern design with sections for projects, skills, testimonials, and contact information. Built with performance and accessibility in mind.
+                </p>
+                
+                <div class="modal-details">
+                    <div class="modal-detail-item">
+                        <h4>Type</h4>
+                        <p>Open Source Project</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Date</h4>
+                        <p>November 2022</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Role</h4>
+                        <p>Designer & Developer</p>
+                    </div>
+                    <div class="modal-detail-item">
+                        <h4>Downloads</h4>
+                        <p>1,200+</p>
+                    </div>
+                </div>
+                
+                <div class="modal-tech-stack">
+                    <h3>Technologies Used</h3>
+                    <div class="modal-tech-stack-items">
+                        <span class="modal-tech-stack-item">HTML5</span>
+                        <span class="modal-tech-stack-item">CSS3</span>
+                        <span class="modal-tech-stack-item">JavaScript</span>
+                        <span class="modal-tech-stack-item">Sass</span>
+                        <span class="modal-tech-stack-item">GSAP</span>
+                        <span class="modal-tech-stack-item">Git</span>
+                    </div>
+                </div>
+                
+                <div class="modal-gallery">
+                    <h3>Template Features</h3>
+                    <div class="modal-gallery-grid">
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1636&q=80" alt="Homepage" class="modal-gallery-img">
+                        </div>
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Projects Section" class="modal-gallery-img">
+                        </div>
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Skills Section" class="modal-gallery-img">
+                        </div>
+                        <div class="modal-gallery-item">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Contact Form" class="modal-gallery-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <a href="#" class="btn btn-primary" target="_blank">View Live Demo</a>
+                    <a href="#" class="btn btn-outline" target="_blank">Download Template</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Macford <span>Isaiah</span></div>
+                    <p>Full-stack developer creating digital experiences that matter. From concept to code, I bring ideas to life.</p>
+                    <div class="social-links">
+                        <a href="https://x.com/StarfordTech7" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/techstarford" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@StarfordTech-77" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="index.html#blog">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Video Editing</a></li>
+                        <li><a href="#">Mentorship</a></li>
+                        <li><a href="#">Performance Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to my newsletter for the latest updates, tutorials, and resources.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email">
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Macford Isaiah Ninshaba. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Sticky Header
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.portfolio-filter-btn');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-filter');
+                const portfolioItems = document.querySelectorAll('.portfolio-grid-item');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Project Modals
+        const viewProjectBtns = document.querySelectorAll('.view-project');
+        const modals = document.querySelectorAll('.modal');
+        const modalCloseBtns = document.querySelectorAll('.modal-close');
+        
+        viewProjectBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const portfolioItem = btn.closest('.portfolio-grid-item');
+                const projectId = portfolioItem.getAttribute('data-project');
+                const modal = document.getElementById(`${projectId}-modal`);
+                
+                if (modal) {
+                    // Increment view count when modal is opened
+                    const viewsNumber = modal.querySelector('.views-number');
+                    if (viewsNumber) {
+                        let currentViews = parseInt(viewsNumber.textContent.replace(/,/g, ''));
+                        currentViews++;
+                        viewsNumber.textContent = currentViews.toLocaleString();
+                    }
+                    
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        modalCloseBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        });
+        
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                modals.forEach(modal => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+        
+        // Engagement Buttons Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize project data from localStorage or defaults
+            const projects = ['ecommerce', 'mobile-app', 'portfolio-template'];
+            
+            projects.forEach(projectId => {
+                // Load saved state or initialize
+                const savedLikes = localStorage.getItem(`${projectId}-likes`);
+                const savedFavorites = localStorage.getItem(`${projectId}-favorites`);
+                const savedDownloads = localStorage.getItem(`${projectId}-downloads`);
+                
+                // Update all buttons for this project
+                document.querySelectorAll(`.like-btn[data-project="${projectId}"]`).forEach(btn => {
+                    const countSpan = btn.querySelector('.count');
+                    if (savedLikes) {
+                        countSpan.textContent = savedLikes;
+                        if (localStorage.getItem(`${projectId}-liked`) === 'true') {
+                            btn.classList.add('liked');
+                            btn.innerHTML = btn.innerHTML.replace('far fa-heart', 'fas fa-heart');
+                        }
+                    }
+                });
+                
+                document.querySelectorAll(`.favorite-btn[data-project="${projectId}"]`).forEach(btn => {
+                    const countSpan = btn.querySelector('.count');
+                    if (savedFavorites) {
+                        countSpan.textContent = savedFavorites;
+                        if (localStorage.getItem(`${projectId}-favorited`) === 'true') {
+                            btn.classList.add('favorited');
+                            btn.innerHTML = btn.innerHTML.replace('far fa-star', 'fas fa-star');
+                        }
+                    }
+                });
+                
+                document.querySelectorAll(`.download-btn[data-project="${projectId}"]`).forEach(btn => {
+                    const countSpan = btn.querySelector('.count');
+                    if (savedDownloads) {
+                        countSpan.textContent = savedDownloads;
+                    }
+                });
+            });
+            
+            // Like button functionality
+            document.querySelectorAll('.like-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const projectId = this.getAttribute('data-project');
+                    const countSpan = this.querySelector('.count');
+                    let count = parseInt(countSpan.textContent.replace(/,/g, ''));
+                    const icon = this.querySelector('i');
+                    
+                    if (this.classList.contains('liked')) {
+                        // Unlike
+                        count--;
+                        this.classList.remove('liked');
+                        icon.classList.replace('fas', 'far');
+                        localStorage.setItem(`${projectId}-liked`, 'false');
+                    } else {
+                        // Like
+                        count++;
+                        this.classList.add('liked');
+                        icon.classList.replace('far', 'fas');
+                        localStorage.setItem(`${projectId}-liked`, 'true');
+                    }
+                    
+                    countSpan.textContent = count.toLocaleString();
+                    localStorage.setItem(`${projectId}-likes`, count);
+                });
+            });
+            
+            // Favorite button functionality
+            document.querySelectorAll('.favorite-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const projectId = this.getAttribute('data-project');
+                    const countSpan = this.querySelector('.count');
+                    let count = parseInt(countSpan.textContent.replace(/,/g, ''));
+                    const icon = this.querySelector('i');
+                    
+                    if (this.classList.contains('favorited')) {
+                        // Remove from favorites
+                        count--;
+                        this.classList.remove('favorited');
+                        icon.classList.replace('fas', 'far');
+                        localStorage.setItem(`${projectId}-favorited`, 'false');
+                    } else {
+                        // Add to favorites
+                        count++;
+                        this.classList.add('favorited');
+                        icon.classList.replace('far', 'fas');
+                        localStorage.setItem(`${projectId}-favorited`, 'true');
+                    }
+                    
+                    countSpan.textContent = count.toLocaleString();
+                    localStorage.setItem(`${projectId}-favorites`, count);
+                });
+            });
+            
+            // Download button functionality
+            document.querySelectorAll('.download-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const projectId = this.getAttribute('data-project');
+                    const countSpan = this.querySelector('.count');
+                    let count = parseInt(countSpan.textContent.replace(/,/g, ''));
+                    
+                    count++;
+                    countSpan.textContent = count.toLocaleString();
+                    localStorage.setItem(`${projectId}-downloads`, count);
+                    
+                    // Simulate download (in a real app, this would trigger an actual download)
+                    alert(`Downloading ${projectId} project files...`);
+                });
+            });
+        });
+        
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.portfolio-grid-item');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.portfolio-grid-item').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Membership | Macford's Developer Community</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/src/assets/css/membershipCSS/prosignup.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Mac<span>ford</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="membership.html" class="active">Membership</a></li>
+                    <li><a href="coding-resources.html">Resources</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="signup-hero">
+        <div class="container">
+            <h1>Accelerate Your <span class="text-gradient">Development Skills</span></h1>
+            <p>Join our Pro membership and get access to exclusive resources, live sessions, and priority support to take your coding to the next level.</p>
+            <a href="#signup-form" class="btn btn-primary">Join Pro Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container" id="signup-form">
+        <div class="signup-container">
+            <!-- Plan Summary -->
+            <aside class="plan-summary">
+                <div class="plan-icon">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h2 class="plan-name">Pro Membership</h2>
+                <div class="plan-price">$29<span>/month</span></div>
+                
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Weekly live coding sessions</li>
+                    <li><i class="fas fa-check"></i> Private GitHub repository access</li>
+                    <li><i class="fas fa-check"></i> Monthly code reviews</li>
+                    <li><i class="fas fa-check"></i> Exclusive workshops</li>
+                    <li><i class="fas fa-check"></i> Priority support</li>
+                    <li><i class="fas fa-check"></i> Community Discord access</li>
+                    <li><i class="fas fa-check"></i> All Starter benefits included</li>
+                </ul>
+                
+                <a href="membership.html" class="change-plan">View other plans</a>
+            </aside>
+            
+            <!-- Signup Form -->
+            <div class="signup-form">
+                <h2 class="form-title">Create Your Account</h2>
+                
+                <form id="payment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name" class="form-label">First Name</label>
+                            <input type="text" id="first-name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last-name" class="form-label">Last Name</label>
+                            <input type="text" id="last-name" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Create Password</label>
+                        <input type="password" id="password" class="form-control" required minlength="8">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="confirm-password" class="form-label">Confirm Password</label>
+                        <input type="password" id="confirm-password" class="form-control" required minlength="8">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Payment Information</label>
+                        <div class="card-element" id="card-element">
+                            <!-- Stripe Card Element will be inserted here -->
+                        </div>
+                        <div id="card-errors" role="alert" style="color: #ff6584; font-size: 0.9rem; margin-top: 5px;"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn">Start My Pro Membership</button>
+                    
+                    <div class="secure-payment">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure payment processed by Stripe</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="benefits-container">
+            <h2 class="section-title">Pro Membership <span class="text-gradient">Benefits</span></h2>
+            <p class="section-subtitle">Everything you get with your Pro membership</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="benefit-title">Live Coding Sessions</h3>
+                    <p>Weekly live coding sessions where we build real projects together and dive deep into advanced concepts.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="benefit-title">Private Repositories</h3>
+                    <p>Access to our private GitHub repositories with production-ready code examples and project templates.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="benefit-title">Code Reviews</h3>
+                    <p>Monthly personalized code reviews from experienced developers to help you improve your coding practices.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="benefit-title">Exclusive Workshops</h3>
+                    <p>Regular workshops on advanced topics like system design, performance optimization, and debugging techniques.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="benefit-title">Priority Support</h3>
+                    <p>Get your technical questions answered within 24 hours by our team of experienced developers.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="benefit-title">VIP Community</h3>
+                    <p>Access to our private Pro community channels with networking opportunities and exclusive discussions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Pro <span class="text-gradient">Success Stories</span></h2>
+            <p class="section-subtitle">Hear from developers who leveled up with our Pro membership</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The live coding sessions transformed how I approach problems. I went from junior to senior developer in just 8 months thanks to the Pro membership."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="David Rodriguez" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4>David Rodriguez</h4>
+                            <p>Senior Software Engineer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The code reviews helped me identify bad habits I didn't even know I had. My code quality improved dramatically within weeks."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Emily Park" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4>Emily Park</h4>
+                            <p>Frontend Lead</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The private repositories gave me access to production-grade code that helped me understand best practices I couldn't find in tutorials."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="James Wilson" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4>James Wilson</h4>
+                            <p>Full-Stack Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <h2 class="section-title">Plan <span class="text-gradient">Comparison</span></h2>
+            <p class="section-subtitle">See how Pro compares to our other membership options</p>
+            
+            <div class="comparison-table">
+                <div class="comparison-header">
+                    <div class="comparison-feature">Features</div>
+                    <div class="comparison-plan">Starter</div>
+                    <div class="comparison-plan highlight">Pro</div>
+                    <div class="comparison-plan">Mastermind</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-feature">Monthly Price</div>
+                    <div class="comparison-plan">Free</div>
+                    <div class="comparison-plan highlight">$29</div>
+                    <div class="comparison-plan">$99</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-feature">Live Coding Sessions</div>
+                    <div class="comparison-plan"><i class="fas fa-times"></i></div>
+                    <div class="comparison-plan highlight"><i class="fas fa-check"></i> Weekly</div>
+                    <div class="comparison-plan"><i class="fas fa-check"></i> Weekly + 1:1</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-feature">Code Reviews</div>
+                    <div class="comparison-plan"><i class="fas fa-check"></i> Limited</div>
+                    <div class="comparison-plan highlight"><i class="fas fa-check"></i> Monthly</div>
+                    <div class="comparison-plan"><i class="fas fa-check"></i> Unlimited</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-feature">Private Repositories</div>
+                    <div class="comparison-plan"><i class="fas fa-times"></i></div>
+                    <div class="comparison-plan highlight"><i class="fas fa-check"></i></div>
+                    <div class="comparison-plan"><i class="fas fa-check"></i></div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-feature">Priority Support</div>
+                    <div class="comparison-plan"><i class="fas fa-times"></i></div>
+                    <div class="comparison-plan highlight"><i class="fas fa-check"></i></div>
+                    <div class="comparison-plan"><i class="fas fa-check"></i></div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-feature">1:1 Mentorship</div>
+                    <div class="comparison-plan"><i class="fas fa-times"></i></div>
+                    <div class="comparison-plan highlight"><i class="fas fa-times"></i></div>
+                    <div class="comparison-plan"><i class="fas fa-check"></i> Weekly</div>
+                </div>
+                
+                <div class="comparison-row">
+                    <div class="comparison-feature">Job Search Assistance</div>
+                    <div class="comparison-plan"><i class="fas fa-times"></i></div>
+                    <div class="comparison-plan highlight"><i class="fas fa-times"></i></div>
+                    <div class="comparison-plan"><i class="fas fa-check"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently <span class="text-gradient">Asked Questions</span></h2>
+            <p class="section-subtitle">Everything you need to know about our Pro membership</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How often are the live coding sessions?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We host live coding sessions every week, typically on Wednesdays at 7 PM EST. All sessions are recorded and available to members who can't attend live.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I cancel my Pro membership anytime?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, you can cancel anytime with no penalty. Your membership will remain active until the end of your current billing period.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What programming languages are covered?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We primarily focus on JavaScript (React, Node.js), Python, and modern web development. However, the principles taught apply to any language, and we often cover language-agnostic topics like system design and algorithms.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How do the code reviews work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Each month, you can submit up to 200 lines of code for review. Our team will provide detailed feedback on style, architecture, performance, and best practices within 72 hours.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is there a free trial for the Pro membership?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 7-day money-back guarantee. If you're not satisfied within the first week, we'll refund your payment in full, no questions asked.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to <span class="text-gradient">Level Up</span> Your Skills?</h2>
+            <p>Join our Pro membership today and get immediate access to all benefits.</p>
+            <a href="#signup-form" class="btn btn-outline">Join Pro Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Mac<span>ford</span></div>
+                    <p>Full-stack developer creating digital experiences that matter. From concept to code, I bring ideas to life.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="membership.html">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="coding-resources.html">Learning Resources</a></li>
+                        <li><a href="#">Free Tutorials</a></li>
+                        <li><a href="#">Coding Challenges</a></li>
+                        <li><a href="#">Developer Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for free coding tips and community updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email">
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>By joining, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+                <p>Need help? <a href="mailto:support@macford.dev">Contact our support team</a></p>
+                
+                <p>&copy; 2023 Macford Isaiah Ninshaba. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Sticky Header
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Form Validation
+        const form = document.getElementById('payment-form');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm-password');
+        
+        form.addEventListener('submit', (e) => {
+            if (password.value !== confirmPassword.value) {
+                e.preventDefault();
+                alert('Passwords do not match!');
+                confirmPassword.focus();
+            } else {
+                // Initialize Stripe with your public key
+                const stripe = Stripe('pk_test_your_publishable_key_here');
+                const elements = stripe.elements();
+                
+                // Create card element
+                const card = elements.create('card', {
+                    style: {
+                        base: {
+                            color: '#f8f9fa',
+                            fontFamily: '"Poppins", sans-serif',
+                            fontSmoothing: 'antialiased',
+                            fontSize: '16px',
+                            '::placeholder': {
+                                color: '#6c757d'
+                            }
+                        },
+                        invalid: {
+                            color: '#ff6584',
+                            iconColor: '#ff6584'
+                        }
+                    }
+                });
+                
+                card.mount('#card-element');
+                
+                // Handle real-time validation errors
+                card.addEventListener('change', function(event) {
+                    const displayError = document.getElementById('card-errors');
+                    if (event.error) {
+                        displayError.textContent = event.error.message;
+                    } else {
+                        displayError.textContent = '';
+                    }
+                });
+                
+                // For demo purposes, we'll simulate success
+                e.preventDefault();
+                alert('Payment processed successfully! Welcome to the Pro community.');
+                form.reset();
+            }
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.benefit-card, .testimonial-card, .faq-item, .comparison-row');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.benefit-card, .testimonial-card, .faq-item, .comparison-row').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

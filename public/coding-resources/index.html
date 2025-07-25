@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macford | Full-Stack Resources - Developer & Creative Coder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">]
+    <link rel="stylesheet" href="/src/assets/css/resources.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Mac<span>ford</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="coding-resources.html" class="active">Resources</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Resources Hero -->
+    <section class="resources-hero">
+        <div class="container">
+            <div class="resources-hero-content">
+                <h1 class="resources-hero-title">Full-Stack <span class="text-gradient">Resources</span></h1>
+                <p class="resources-hero-subtitle">Curated collection of tools, tutorials, and references to help you become a better developer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="section">
+        <div class="container">
+            <div class="resources-categories">
+                <button class="resources-category-btn active" data-category="all">All</button>
+                <button class="resources-category-btn" data-category="frontend">Frontend</button>
+                <button class="resources-category-btn" data-category="backend">Backend</button>
+                <button class="resources-category-btn" data-category="database">Database</button>
+                <button class="resources-category-btn" data-category="tools">Tools</button>
+                <button class="resources-category-btn" data-category="learning">Learning</button>
+                <button class="resources-category-btn" data-category="design">Design</button>
+            </div>
+            
+            <div class="resources-grid">
+                <!-- Resource 1 -->
+                <div class="resource-card" data-category="frontend">
+                    <span class="resource-category">Frontend</span>
+                    <div class="resource-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="resource-title">React Documentation</h3>
+                    <p class="resource-description">The official React documentation is the best place to start learning React. Comprehensive, well-organized, and regularly updated.</p>
+                    <a href="https://reactjs.org/docs/getting-started.html" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 2 -->
+                <div class="resource-card" data-category="backend">
+                    <span class="resource-category">Backend</span>
+                    <div class="resource-icon">
+                        <i class="fab fa-node-js"></i>
+                    </div>
+                    <h3 class="resource-title">Node.js Best Practices</h3>
+                    <p class="resource-description">GitHub repository with the largest Node.js best practices list. Learn to build secure, performant Node.js applications.</p>
+                    <a href="https://github.com/goldbergyoni/nodebestpractices" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 3 -->
+                <div class="resource-card" data-category="database">
+                    <span class="resource-category">Database</span>
+                    <div class="resource-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="resource-title">MongoDB University</h3>
+                    <p class="resource-description">Free courses from MongoDB to help you master document databases. Great for both beginners and experienced developers.</p>
+                    <a href="https://university.mongodb.com/" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 4 -->
+                <div class="resource-card" data-category="learning">
+                    <span class="resource-category">Learning</span>
+                    <div class="resource-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="resource-title">Fullstack Open</h3>
+                    <p class="resource-description">Free MOOC from University of Helsinki covering modern JavaScript web development with React, Node.js, GraphQL, and more.</p>
+                    <a href="https://fullstackopen.com/en/" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 5 -->
+                <div class="resource-card" data-category="learning">
+                    <span class="resource-category">Learning</span>
+                    <div class="resource-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="resource-title">Eloquent JavaScript</h3>
+                    <p class="resource-description">Modern introduction to programming with JavaScript. Available for free online covering both frontend and backend concepts.</p>
+                    <a href="https://eloquentjavascript.net/" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 6 -->
+                <div class="resource-card" data-category="tools">
+                    <span class="resource-category">Tools</span>
+                    <div class="resource-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="resource-title">Visual Studio Code</h3>
+                    <p class="resource-description">Lightweight, powerful code editor with an incredible extension ecosystem that supercharges your development workflow.</p>
+                    <a href="https://code.visualstudio.com/" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 7 -->
+                <div class="resource-card" data-category="design">
+                    <span class="resource-category">Design</span>
+                    <div class="resource-icon">
+                        <i class="fab fa-figma"></i>
+                    </div>
+                    <h3 class="resource-title">Figma for Developers</h3>
+                    <p class="resource-description">Guide to using Figma as a developer - inspecting designs, extracting assets, and understanding design systems.</p>
+                    <a href="https://www.figma.com/best-practices/guide-to-developer-handoff/components-styles-and-documentation/" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 8 -->
+                <div class="resource-card" data-category="frontend">
+                    <span class="resource-category">Frontend</span>
+                    <div class="resource-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3 class="resource-title">CSS Tricks</h3>
+                    <p class="resource-description">Extensive collection of CSS articles, tutorials, and guides covering everything from basics to advanced techniques.</p>
+                    <a href="https://css-tricks.com/" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 9 -->
+                <div class="resource-card" data-category="backend">
+                    <span class="resource-category">Backend</span>
+                    <div class="resource-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="resource-title">REST API Best Practices</h3>
+                    <p class="resource-description">Comprehensive guide to designing REST APIs that are consistent, well-documented, and easy to consume.</p>
+                    <a href="https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 10 -->
+                <div class="resource-card" data-category="tools">
+                    <span class="resource-category">Tools</span>
+                    <div class="resource-icon">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3 class="resource-title">Git Handbook</h3>
+                    <p class="resource-description">GitHub's guide to Git covering everything from basic commands to advanced workflows and best practices.</p>
+                    <a href="https://guides.github.com/introduction/git-handbook/" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 11 -->
+                <div class="resource-card" data-category="learning">
+                    <span class="resource-category">Learning</span>
+                    <div class="resource-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="resource-title">Frontend Masters</h3>
+                    <p class="resource-description">In-depth courses on modern frontend technologies taught by industry experts. Some free courses available.</p>
+                    <a href="https://frontendmasters.com/learn/" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Resource 12 -->
+                <div class="resource-card" data-category="design">
+                    <span class="resource-category">Design</span>
+                    <div class="resource-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="resource-title">Color Hunt</h3>
+                    <p class="resource-description">Curated collection of beautiful color palettes for designers and developers. Great for UI design inspiration.</p>
+                    <a href="https://colorhunt.co/" target="_blank" class="resource-link">View Resource <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            
+            <!-- Resources Newsletter -->
+            <div class="resources-newsletter">
+                <div class="resources-newsletter-content">
+                    <h2>Get More Resources Like These</h2>
+                    <p>Subscribe to my developer newsletter and receive weekly curated resources, tutorials, and tips straight to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address">
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Macford <span>Isaiah</span></div>
+                    <p>Full-stack developer creating digital experiences that matter. From concept to code, I bring ideas to life.</p>
+                    <div class="social-links">
+                        <a href="https://x.com/StarfordTech7" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/techstarford" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@StarfordTech-77" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Video Editing</a></li>
+                        <li><a href="#">Mentorship</a></li>
+                        <li><a href="#">Performance Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for updates and resources</p>
+                    <form class="footer-newsletter-form">
+                        <input type="email" class="footer-newsletter-input" placeholder="Your Email">
+                        <button type="submit" class="footer-newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Macford Isaiah Ninshaba. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Sticky Header
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth Scrolling for Navigation Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Resources Filter
+        const resourceCategoryBtns = document.querySelectorAll('.resources-category-btn');
+        
+        resourceCategoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                resourceCategoryBtns.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                const filterValue = btn.getAttribute('data-category');
+                const resourceCards = document.querySelectorAll('.resource-card');
+                
+                resourceCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Newsletter Form Submission
+        const newsletterForms = document.querySelectorAll('.newsletter-form, .footer-newsletter-form');
+        
+        newsletterForms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = form.querySelector('input[type="email"]');
+                alert(`Thank you for subscribing with ${emailInput.value}! You'll receive our next update.`);
+                emailInput.value = '';
+            });
+        });
+        
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.resource-card, .resources-newsletter');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.resource-card, .resources-newsletter').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
