@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macford | Blog - Full-Stack Developer & Creative Coder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/assets/css/blog2.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Mac<span>ford</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="coding-resources.html">Resources</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Main Content -->
+    <section class="blog-main section">
+        <div class="container">
+            <div class="blog-header">
+                <h1 class="section-title">My <span class="text-gradient">Blog</span></h1>
+                <p class="section-subtitle">Tutorials, insights, and thoughts on web development, design, and more.</p>
+            </div>
+            
+            <div class="blog-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search articles...">
+            </div>
+            
+            <div class="blog-categories">
+                <div class="blog-category active" data-category="all">All</div>
+                <div class="blog-category" data-category="web-dev">Web Dev</div>
+                <div class="blog-category" data-category="javascript">JavaScript</div>
+                <div class="blog-category" data-category="react">React</div>
+                <div class="blog-category" data-category="node">Node.js</div>
+                <div class="blog-category" data-category="ui-ux">UI/UX</div>
+                <div class="blog-category" data-category="career">Career</div>
+                <div class="blog-category" data-category="video-editing">Video Editing</div>
+            </div>
+            
+            <div class="blog-grid">
+                <!-- Blog Post 1 -->
+                <a href="blog-posts/mern-stack-2023.html" class="blog-card" data-category="web-dev">
+                    <img src="images/blogpost1 img.avif" alt="MERN Stack Guide" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Web Development</span>
+                        <h3 class="blog-card-title">How to Build a MERN Stack App in 2023</h3>
+                        <p class="blog-card-excerpt">A step-by-step guide to building a full-stack application with MongoDB, Express, React, and Node.js with modern best practices.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> June 15, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 8 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Blog Post 2 -->
+                <a href="blog-posts/async-await-javascript.html" class="blog-card" data-category="javascript">
+                    <img src="images/blogpost2 img" alt="Async/Await Guide" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">JavaScript</span>
+                        <h3 class="blog-card-title">Mastering Async/Await in JavaScript</h3>
+                        <p class="blog-card-excerpt">A deep dive into asynchronous programming in JavaScript with practical examples and best practices for clean, efficient code.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> April 22, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 10 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Blog Post 3 -->
+                <a href="blog-posts/react-vs-vue-2023.html" class="blog-card" data-category="react">
+                    <img src="images/blogpost3 img" alt="React vs Vue" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">React</span>
+                        <h3 class="blog-card-title">React vs Vue: Which One Should You Learn in 2023?</h3>
+                        <p class="blog-card-excerpt">Comparing two of the most popular JavaScript frameworks to help you decide which one to learn next based on your goals.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> May 28, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Blog Post 4 -->
+                <a href="blog-posts/freelancing-tips.html" class="blog-card" data-category="career">
+                    <img src="images/blogpost4 img" alt="Freelancing Tips" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Career</span>
+                        <h3 class="blog-card-title">Freelancing Tips for Beginner Developers</h3>
+                        <p class="blog-card-excerpt">How to land your first clients, set your rates, and build a sustainable freelance business as a developer.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> May 10, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 7 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Blog Post 5 -->
+                <a href="blog-posts/nodejs-best-practices.html" class="blog-card" data-category="node">
+                    <img src="images/blogpost5 img" alt="Node.js Best Practices" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Node.js</span>
+                        <h3 class="blog-card-title">Node.js Best Practices for Scalable Apps</h3>
+                        <p class="blog-card-excerpt">Essential patterns and practices for building scalable, maintainable Node.js applications in production.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> March 18, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 9 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Blog Post 6 -->
+                <a href="blog-posts/accessible-web-apps.html" class="blog-card" data-category="ui-ux">
+                    <img src="images/blogpost6 img" alt="Accessible Web Apps" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">UI/UX</span>
+                        <h3 class="blog-card-title">Building Accessible Web Applications</h3>
+                        <p class="blog-card-excerpt">Essential techniques to make your web applications accessible to all users, including those with disabilities.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> April 5, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 7 -->
+                <a href="blog-posts/html-2025.html" class="blog-card" data-category="web-dev">
+                    <img src="images/blogpost7.jpg" alt="HTML in 2025" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Web Development</span>
+                        <h3 class="blog-card-title">What HTML Is and Why You Need to Learn It in 2025</h3>
+                        <p class="blog-card-excerpt">In 2025, HTML is not just for beginners - it's evolving with powerful new features while remaining the bedrock of all web development.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> July 2, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 5 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Blog Post 8 -->
+                <a href="blog-posts/premiere-pro-2024.html" class="blog-card" data-category="video-editing">
+                    <img src="images/blogpost8.jpg" alt="Premiere Pro 2024" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Video Editing</span>
+                        <h3 class="blog-card-title">Mastering Adobe Premiere Pro in 2024: The Complete Guide</h3>
+                        <p class="blog-card-excerpt">Adobe Premiere Pro remains the industry-standard video editing software in 2024, powering everything from Hollywood films to YouTube content.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> July 10, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 12 min read</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Blog Post 9 -->
+                <a href="blog-posts/frontend-frameworks-2023.html" class="blog-card" data-category="web-dev">
+                    <img src="images/blogpost9.jpg" alt="Frontend Frameworks" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Web Development</span>
+                        <h3 class="blog-card-title">Frontend Frameworks: Why They Matter and Which Ones to Learn in 2023</h3>
+                        <p class="blog-card-excerpt">An in-depth look at the current frontend framework landscape and how to choose the right one for your projects.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> July 18, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 8 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Blog Post 10 -->
+                <a href="blog-posts/web3-development.html" class="blog-card" data-category="web-dev">
+                    <img src="images/Front-end Programmer.jpg" alt="Web3 Development" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Web Development</span>
+                        <h3 class="blog-card-title">Getting Started with Web3 Development in 2023</h3>
+                        <p class="blog-card-excerpt">Learn the fundamentals of blockchain development and how to build decentralized applications (dApps) with modern tools.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> July 25, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 10 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Blog Post 11 -->
+                <a href="blog-posts/ai-video-editing.html" class="blog-card" data-category="video-editing">
+                    <img src="images/Ultimate Adobe Premiere Pro Preset Pack for Creators.jpeg" alt="AI Video Editing" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Video Editing</span>
+                        <h3 class="blog-card-title">AI-Powered Video Editing: The Future is Here</h3>
+                        <p class="blog-card-excerpt">How artificial intelligence is revolutionizing video editing workflows and what tools you should be using today.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> August 1, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 7 min read</span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- Blog Post 12 -->
+                <a href="blog-posts/css-2023.html" class="blog-card" data-category="web-dev">
+                    <img src="images/Css 3 free icons designed by Freepik.jpg" alt="CSS 2023" class="blog-card-image">
+                    <div class="blog-card-content">
+                        <span class="blog-card-category">Web Development</span>
+                        <h3 class="blog-card-title">Modern CSS Techniques You Should Know in 2023</h3>
+                        <p class="blog-card-excerpt">Explore the latest CSS features and techniques that will make your websites more efficient and visually stunning.</p>
+                        <div class="blog-card-meta">
+                            <span class="blog-card-date"><i class="far fa-calendar"></i> August 8, 2023</span>
+                            <span class="blog-card-readtime"><i class="far fa-clock"></i> 6 min read</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="blog-pagination">
+                <a href="blog.html" class="pagination-btn">1</a>
+                <a href="#" class="pagination-btn active">2</a>
+                <a href="blog3.html" class="pagination-btn">3</a>
+                <a href="blog3.html" class="pagination-btn"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Macford <span>Isaiah</span></div>
+                    <p>Full-stack developer creating digital experiences that matter. From concept to code, I bring ideas to life.</p>
+                    <div class="social-links">
+                        <a href="https://x.com/StarfordTech7" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://github.com/techstarford" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@StarfordTech-77" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Video Editing</a></li>
+                        <li><a href="#">Mentorship</a></li>
+                        <li><a href="#">Performance Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to my newsletter for the latest updates, tutorials, and resources.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email">
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Macford Isaiah Ninshaba. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Sticky Header
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Blog Category Filter
+        const categories = document.querySelectorAll('.blog-category');
+        const blogCards = document.querySelectorAll('.blog-card');
+        
+        categories.forEach(category => {
+            category.addEventListener('click', () => {
+                // Remove active class from all categories
+                categories.forEach(c => c.classList.remove('active'));
+                // Add active class to clicked category
+                category.classList.add('active');
+                
+                const filterValue = category.getAttribute('data-category');
+                
+                // Filter blog cards
+                blogCards.forEach(card => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Blog Search Functionality
+        const searchInput = document.querySelector('.blog-search input');
+        
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            blogCards.forEach(card => {
+                const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.blog-card-excerpt').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+        
+        // Animation on Scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.blog-card, .blog-category, .blog-search');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state for animated elements
+        document.querySelectorAll('.blog-card, .blog-category, .blog-search').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            element.style.transition = 'all 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>

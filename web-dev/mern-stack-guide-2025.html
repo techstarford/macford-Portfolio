@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Build a MERN Stack App in 2023 | Macford's Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/blogposts-css/mern-stack-guide.css">
+        
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Mac<span>ford</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="coding-resources.html">Resources</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post section">
+        <div class="container">
+            <div class="blog-post-header">
+                <span class="blog-post-category">Web Development</span>
+                <h1 class="blog-post-title">How to Build a MERN Stack App in 2023</h1>
+                <div class="blog-post-meta">
+                    <div class="blog-post-author">
+                        <img src="images/author.jpg" alt="Macford Isaiah" class="blog-post-author-img">
+                        <span>Macford Isaiah</span>
+                    </div>
+                    <div class="blog-post-date">
+                        <i class="far fa-calendar"></i> June 15, 2023
+                    </div>
+                    <div class="blog-post-readtime">
+                        <i class="far fa-clock"></i> 8 min read
+                    </div>
+                </div>
+            </div>
+            
+            <img src="images/blogpost1.jpg" alt="MERN Stack Development" class="blog-post-image">
+            
+            <div class="blog-post-content">
+                <div class="blog-post-main">
+                    <div class="content-block">
+                        <p>The MERN stack (MongoDB, Express.js, React, and Node.js) continues to be one of the most popular choices for building full-stack JavaScript applications in 2023. With its unified JavaScript/JSON development paradigm and robust ecosystem, MERN offers developers a powerful toolkit for creating modern web applications.</p>
+                        
+                        <p>In this comprehensive guide, we'll walk through building a complete MERN stack application from scratch, incorporating the latest best practices and tools available in 2023. By the end, you'll have a solid understanding of how these technologies work together and a functional application you can extend.</p>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Why Choose MERN in 2023?</h2>
+                        <p>Before diving into the code, let's examine why the MERN stack remains relevant in 2023:</p>
+                        
+                        <ul>
+                            <li><strong>Full JavaScript:</strong> From client to server to database, everything uses JavaScript, reducing context switching.</li>
+                            <li><strong>React's Dominance:</strong> React continues to be the most popular frontend library with a massive ecosystem.</li>
+                            <li><strong>MongoDB's Flexibility:</strong> The document model fits well with JavaScript objects and provides schema flexibility.</li>
+                            <li><strong>Performance:</strong> Node.js's non-blocking I/O and React's virtual DOM provide excellent performance.</li>
+                            <li><strong>Community Support:</strong> All four technologies have large, active communities with abundant resources.</li>
+                        </ul>
+                        
+                        <div class="note">
+                            <p><strong>Note:</strong> According to the 2022 Stack Overflow Developer Survey, React is used by 42.6% of professional developers, making it the most popular web framework.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Project Overview</h2>
+                        <p>We'll be building a task management application with the following features:</p>
+                        
+                        <ul>
+                            <li>User authentication (signup, login, logout)</li>
+                            <li>CRUD operations for tasks</li>
+                            <li>Task categorization and filtering</li>
+                            <li>Responsive design</li>
+                            <li>Real-time updates using WebSockets</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Setting Up the Development Environment</h2>
+                        
+                        <h3>Prerequisites</h3>
+                        <p>Before starting, ensure you have the following installed:</p>
+                        
+                        <ul>
+                            <li>Node.js (v16 or later recommended)</li>
+                            <li>npm (comes with Node.js) or yarn</li>
+                            <li>MongoDB (either locally or MongoDB Atlas)</li>
+                            <li>A code editor (VS Code recommended)</li>
+                        </ul>
+                        
+                        <h3>Project Structure</h3>
+                        <p>We'll organize our project with a client/server architecture:</p>
+                        
+                        <pre>
+mern-task-manager/
+├── client/          # React frontend
+├── server/          # Node.js/Express backend
+├── .gitignore
+└── README.md
+                        </pre>
+                        
+                        <p>Create this basic structure and initialize a Git repository and npm project:</p>
+                        
+                        <pre><code class="language-bash">mkdir mern-task-manager
+cd mern-task-manager
+git init
+npm init -y
+</code></pre>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Building the Backend (Node.js + Express + MongoDB)</h2>
+                        
+                        <h3>1. Setting Up Express Server</h3>
+                        <p>Navigate to the server directory and set up a basic Express server:</p>
+                        
+                        <pre><code class="language-bash">mkdir server
+cd server
+npm init -y
+npm install express mongoose cors dotenv bcryptjs jsonwebtoken express-async-handler
+npm install --save-dev nodemon
+</code></pre>
+                        
+                        <p>Create a basic server setup in <code>server.js</code>:</p>
+                        
+                        <pre><code class="language-javascript">require('dotenv').config();
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const path = require('path');
+
+const app = express();
+
+// Middleware
+app.use(cors());
+app.use(express.json());
+
+// Database connection
+mongoose.connect(process.env.MONGO_URI)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log(err));
+
+// Routes
+app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/tasks', require('./routes/taskRoutes'));
+
+// Serve static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+  
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../client', 'build', 'index.html'));
+  });
+}
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+</code></pre>
+                        
+                        <h3>2. Creating Data Models</h3>
+                        <p>Define your MongoDB schemas in the <code>models</code> directory. First, the user model:</p>
+                        
+                        <pre><code class="language-javascript">// models/User.js
+const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
+
+const userSchema = mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+// Hash password before saving
+userSchema.pre('save', async function (next) {
+  if (!this.isModified('password')) {
+    next();
+  }
+  
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+
+// Method to compare passwords
+userSchema.methods.matchPassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password);
+};
+
+module.exports = mongoose.model('User', userSchema);
+</code></pre>
+                        
+                        <p>And the task model:</p>
+                        
+                        <pre><code class="language-javascript">// models/Task.js
+const mongoose = require('mongoose');
+
+const taskSchema = mongoose.Schema(
+  {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+      required: true,
+    },
+    category: {
+      type: String,
+      enum: ['work', 'personal', 'shopping', 'other'],
+      default: 'personal',
+    },
+    completed: {
+      type: Boolean,
+      default: false,
+    },
+    dueDate: {
+      type: Date,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
+module.exports = mongoose.model('Task', taskSchema);
+</code></pre>
+                        
+                        <h3>3. Implementing Authentication</h3>
+                        <p>Create authentication controllers and routes. First, the auth controller:</p>
+                        
+                        <pre><code class="language-javascript">// controllers/authController.js
+const asyncHandler = require('express-async-handler');
+const jwt = require('jsonwebtoken');
+const User = require('../models/User');
+
+// @desc    Authenticate user & get token
+// @route   POST /api/users/login
+// @access  Public
+const authUser = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await User.findOne({ email });
+
+  if (user && (await user.matchPassword(password))) {
+    res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      token: generateToken(user._id),
+    });
+  } else {
+    res.status(401);
+    throw new Error('Invalid email or password');
+  }
+});
+
+// @desc    Register a new user
+// @route   POST /api/users
+// @access  Public
+const registerUser = asyncHandler(async (req, res) => {
+  const { name, email, password } = req.body;
+
+  const userExists = await User.findOne({ email });
+
+  if (userExists) {
+    res.status(400);
+    throw new Error('User already exists');
+  }
+
+  const user = await User.create({
+    name,
+    email,
+    password,
+  });
+
+  if (user) {
+    res.status(201).json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      token: generateToken(user._id),
+    });
+  } else {
+    res.status(400);
+    throw new Error('Invalid user data');
+  }
+});
+
+// Generate JWT
+const generateToken = (id) => {
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: '30d',
+  });
+};
+
+module.exports = { authUser, registerUser };
+</code></pre>
+                        
+                        <p>Then the user routes:</p>
+                        
+                        <pre><code class="language-javascript">// routes/userRoutes.js
+const express = require('express');
+const { authUser, registerUser } = require('../controllers/authController');
+const { protect } = require('../middleware/authMiddleware');
+
+const router = express.Router();
+
+router.route('/').post(registerUser);
+router.post('/login', authUser);
+
+module.exports = router;
+</code></pre>
+                        
+                        <h3>4. Adding Task Functionality</h3>
+                        <p>Create task controllers and routes:</p>
+                        
+                        <pre><code class="language-javascript">// controllers/taskController.js
+const asyncHandler = require('express-async-handler');
+const Task = require('../models/Task');
+
+// @desc    Get all tasks for a user
+// @route   GET /api/tasks
+// @access  Private
+const getTasks = asyncHandler(async (req, res) => {
+  const tasks = await Task.find({ user: req.user._id });
+  res.json(tasks);
+});
+
+// @desc    Create a task
+// @route   POST /api/tasks
+// @access  Private
+const createTask = asyncHandler(async (req, res) => {
+  const { title, description, category, dueDate } = req.body;
+
+  const task = new Task({
+    user: req.user._id,
+    title,
+    description,
+    category,
+    dueDate,
+  });
+
+  const createdTask = await task.save();
+  res.status(201).json(createdTask);
+});
+
+// @desc    Update a task
+// @route   PUT /api/tasks/:id
+// @access  Private
+const updateTask = asyncHandler(async (req, res) => {
+  const { title, description, category, completed, dueDate } = req.body;
+
+  const task = await Task.findById(req.params.id);
+
+  if (task) {
+    task.title = title || task.title;
+    task.description = description || task.description;
+    task.category = category || task.category;
+    task.completed = completed !== undefined ? completed : task.completed;
+    task.dueDate = dueDate || task.dueDate;
+
+    const updatedTask = await task.save();
+    res.json(updatedTask);
+  } else {
+    res.status(404);
+    throw new Error('Task not found');
+  }
+});
+
+// @desc    Delete a task
+// @route   DELETE /api/tasks/:id
+// @access  Private
+const deleteTask = asyncHandler(async (req, res) => {
+  const task = await Task.findById(req.params.id);
+
+  if (task) {
+    await task.remove();
+    res.json({ message: 'Task removed' });
+  } else {
+    res.status(404);
+    throw new Error('Task not found');
+  }
+});
+
+module.exports = {
+  getTasks,
+  createTask,
+  updateTask,
+  deleteTask,
+};
+</code></pre>
+                        
+                        <p>And the task routes:</p>
+                        
+                        <pre><code class="language-javascript">// routes/taskRoutes.js
+const express = require('express');
+const { protect } = require('../middleware/authMiddleware');
+const {
+  getTasks,
+  createTask,
+  updateTask,
+  deleteTask,
+} = require('../controllers/taskController');
+
+const router = express.Router();
+
+router.route('/')
+  .get(protect, getTasks)
+  .post(protect, createTask);
+
+router.route('/:id')
+  .put(protect, updateTask)
+  .delete(protect, deleteTask);
+
+module.exports = router;
+</code></pre>
+                        
+                        <div class="tip">
+                            <p><strong>Pro Tip:</strong> Use middleware like <code>express-async-handler</code> to avoid wrapping every route handler in try/catch blocks. This makes your code cleaner while still properly handling errors.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Building the Frontend (React)</h2>
+                        
+                        <h3>1. Setting Up React</h3>
+                        <p>Navigate to the client directory and create a new React app using Vite (faster than Create React App):</p>
+                        
+                        <pre><code class="language-bash">cd ..
+npm create vite@latest client --template react
+cd client
+npm install
+npm install axios react-router-dom react-redux @reduxjs/toolkit react-toastify date-fns socket.io-client
+npm install --save-dev @types/react @types/react-dom
+</code></pre>
+                        
+                        <h3>2. Redux Store Setup</h3>
+                        <p>Configure Redux for state management:</p>
+                        
+                        <pre><code class="language-javascript">// src/app/store.js
+import { configureStore } from '@reduxjs/toolkit';
+import authReducer from '../features/auth/authSlice';
+import taskReducer from '../features/tasks/taskSlice';
+
+export const store = configureStore({
+  reducer: {
+    auth: authReducer,
+    tasks: taskReducer,
+  },
+});
+</code></pre>
+                        
+                        <p>Create auth slice:</p>
+                        
+                        <pre><code class="language-javascript">// src/features/auth/authSlice.js
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { toast } from 'react-toastify';
+
+// Async thunks
+export const login = createAsyncThunk(
+  'auth/login',
+  async ({ email, password }, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/api/users/login', { email, password });
+      localStorage.setItem('userInfo', JSON.stringify(data));
+      return data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data?.message || error.message || 'Login failed'
+      );
+    }
+  }
+);
+
+export const register = createAsyncThunk(
+  'auth/register',
+  async ({ name, email, password }, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/api/users', { name, email, password });
+      localStorage.setItem('userInfo', JSON.stringify(data));
+      return data;
+    } catch (error) {
+      return rejectWithValue(
+        error.response?.data?.message || error.message || 'Registration failed'
+      );
+    }
+  }
+);
+
+const authSlice = createSlice({
+  name: 'auth',
+  initialState: {
+    userInfo: localStorage.getItem('userInfo')
+      ? JSON.parse(localStorage.getItem('userInfo'))
+      : null,
+    status: 'idle',
+    error: null,
+  },
+  reducers: {
+    logout: (state) => {
+      localStorage.removeItem('userInfo');
+      state.userInfo = null;
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(login.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(login.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.userInfo = action.payload;
+      })
+      .addCase(login.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload;
+        toast.error(action.payload);
+      })
+      .addCase(register.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(register.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.userInfo = action.payload;
+      })
+      .addCase(register.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.payload;
+        toast.error(action.payload);
+      });
+  },
+});
+
+export const { logout } = authSlice.actions;
+export default authSlice.reducer;
+</code></pre>
+                        
+                        <h3>3. Task Management Components</h3>
+                        <p>Create the main task components. Here's an example of a TaskList component:</p>
+                        
+                        <pre><code class="language-javascript">// src/features/tasks/TaskList.jsx
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getTasks } from './taskSlice';
+import TaskItem from './TaskItem';
+import Spinner from '../../components/Spinner';
+import { format } from 'date-fns';
+
+function TaskList() {
+  const dispatch = useDispatch();
+  const { tasks, status, error } = useSelector((state) => state.tasks);
+  const { userInfo } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (userInfo) {
+      dispatch(getTasks());
+    }
+  }, [dispatch, userInfo]);
+
+  if (status === 'loading') {
+    return <Spinner />;
+  }
+
+  if (error) {
+    return <div className="alert alert-danger">{error}</div>;
+  }
+
+  return (
+    <div className="task-list">
+      {tasks.length === 0 ? (
+        <div className="alert alert-info">No tasks found. Add one to get started!</div>
+      ) : (
+        tasks.map((task) => (
+          <TaskItem
+            key={task._id}
+            task={{
+              ...task,
+              dueDate: task.dueDate ? format(new Date(task.dueDate), 'MMM dd, yyyy') : 'No due date',
+            }}
+          />
+        ))
+      )}
+    </div>
+  );
+}
+
+export default TaskList;
+</code></pre>
+                        
+                        <h3>4. Real-time Updates with Socket.io</h3>
+                        <p>Add real-time functionality to your app:</p>
+                        
+                        <pre><code class="language-javascript">// src/socket.js
+import { io } from 'socket.io-client';
+
+let socket;
+
+export const initiateSocketConnection = (token) => {
+  socket = io(process.env.REACT_APP_SOCKET_ENDPOINT, {
+    auth: { token },
+  });
+  console.log('Connecting socket...');
+};
+
+export const disconnectSocket = () => {
+  console.log('Disconnecting socket...');
+  if (socket) socket.disconnect();
+};
+
+export const subscribeToTasks = (callback) => {
+  if (!socket) return;
+  
+  socket.on('taskUpdate', (task) => {
+    callback(null, task);
+  });
+};
+
+export const sendTaskUpdate = (task) => {
+  if (socket) socket.emit('taskUpdate', task);
+};
+</code></pre>
+                        
+                        <p>Update your backend to support WebSockets:</p>
+                        
+                        <pre><code class="language-javascript">// server.js (add to existing file)
+const { createServer } = require('http');
+const { Server } = require('socket.io');
+
+const httpServer = createServer(app);
+const io = new Server(httpServer, {
+  cors: {
+    origin: process.env.CLIENT_URL,
+    methods: ['GET', 'POST'],
+  },
+});
+
+// Socket.io connection
+io.on('connection', (socket) => {
+  console.log('A user connected');
+  
+  socket.on('taskUpdate', (task) => {
+    socket.broadcast.emit('taskUpdate', task);
+  });
+  
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
+
+httpServer.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+</code></pre>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Deployment Strategies</h2>
+                        
+                        <h3>Option 1: Traditional Deployment</h3>
+                        <p>For a traditional deployment, you can use services like:</p>
+                        
+                        <ul>
+                            <li><strong>Backend:</strong> Heroku, Render, or DigitalOcean</li>
+                            <li><strong>Frontend:</strong> Vercel, Netlify, or AWS S3 + CloudFront</li>
+                            <li><strong>Database:</strong> MongoDB Atlas</li>
+                        </ul>
+                        
+                        <h3>Option 2: Containerized Deployment</h3>
+                        <p>For a more modern approach using containers:</p>
+                        
+                        <pre><code class="language-dockerfile"># Dockerfile for backend
+FROM node:16-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm install
+
+COPY . .
+
+EXPOSE 5000
+CMD ["npm", "run", "dev"]
+</code></pre>
+                        
+                        <pre><code class="language-dockerfile"># Dockerfile for frontend
+FROM node:16-alpine as build
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+FROM nginx:alpine
+COPY --from=build /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+</code></pre>
+                        
+                        <h3>Option 3: Serverless Deployment</h3>
+                        <p>For a serverless approach:</p>
+                        
+                        <ul>
+                            <li><strong>Backend:</strong> AWS Lambda + API Gateway or Azure Functions</li>
+                            <li><strong>Frontend:</strong> AWS S3 + CloudFront or Azure Blob Storage</li>
+                            <li><strong>Database:</strong> MongoDB Atlas or Azure Cosmos DB</li>
+                        </ul>
+                        
+                        <div class="warning">
+                            <p><strong>Important:</strong> Always ensure your environment variables and sensitive data are properly secured in production. Never commit them to your repository.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Performance Optimization</h2>
+                        
+                        <h3>Backend Optimizations</h3>
+                        <ul>
+                            <li>Implement caching with Redis</li>
+                            <li>Use compression middleware</li>
+                            <li>Optimize database queries with indexing</li>
+                            <li>Implement rate limiting</li>
+                        </ul>
+                        
+                        <h3>Frontend Optimizations</h3>
+                        <ul>
+                            <li>Code splitting with React.lazy and Suspense</li>
+                            <li>Implement virtualized lists for large datasets</li>
+                            <li>Optimize images and assets</li>
+                            <li>Use memoization with React.memo and useMemo</li>
+                        </ul>
+                        
+                        <h3>Monitoring and Analytics</h3>
+                        <p>Consider adding:</p>
+                        <ul>
+                            <li>Application performance monitoring (New Relic, Datadog)</li>
+                            <li>Error tracking (Sentry, Rollbar)</li>
+                            <li>User analytics (Google Analytics, Hotjar)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h2>Conclusion</h2>
+                        <p>Building a MERN stack application in 2023 combines the power of JavaScript across the entire stack with modern development practices. This guide has walked you through creating a complete task management application with authentication, real-time updates, and deployment considerations.</p>
+                        
+                        <p>The MERN stack continues to evolve, with new tools and best practices emerging regularly. Some areas to explore next include:</p>
+                        
+                        <ul>
+                            <li>Implementing GraphQL with Apollo</li>
+                            <li>Adding server-side rendering with Next.js</li>
+                            <li>Exploring TypeScript across the stack</li>
+                            <li>Implementing testing with Jest and Cypress</li>
+                        </ul>
+                        
+                        <p>Remember that the key to mastering the MERN stack is practice. Build projects, experiment with different approaches, and stay updated with the latest developments in each technology.</p>
+                    </div>
+                </div>
+                
+                <div class="blog-post-sidebar">
+                    <div class="sidebar-widget author-widget">
+                        <img src="images/author.jpg" alt="Macford Isaiah" class="author-img">
+                        <h3 class="author-name">Macford Isaiah</h3>
+                        <p class="author-bio">Full-stack developer specializing in JavaScript technologies. Passionate about teaching and creating impactful digital experiences.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Popular Posts</h3>
+                        <ul class="popular-posts">
+                            <li class="popular-post">
+                                <a href="blog-posts/async-await-javascript.html">
+                                    <img src="images/blogpost2.jpg" alt="Async/Await" class="popular-post-img">
+                                    <div>
+                                        <h4 class="popular-post-title">Mastering Async/Await in JavaScript</h4>
+                                        <span class="popular-post-date">Apr 22, 2023</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="popular-post">
+                                <a href="blog-posts/react-vs-vue-2023.html">
+                                    <img src="images/blogpost3.jpg" alt="React vs Vue" class="popular-post-img">
+                                    <div>
+                                        <h4 class="popular-post-title">React vs Vue: Which to Learn in 2023?</h4>
+                                        <span class="popular-post-date">May 28, 2023</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="popular-post">
+                                <a href="blog-posts/nodejs-best-practices.html">
+                                    <img src="images/blogpost5.jpg" alt="Node.js Best Practices" class="popular-post-img">
+                                    <div>
+                                        <h4 class="popular-post-title">Node.js Best Practices</h4>
+                                        <span class="popular-post-date">Mar 18, 2023</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Categories</h3>
+                        <div class="tags-widget">
+                            <a href="blog.html?category=web-dev" class="tag">Web Development</a>
+                            <a href="blog.html?category=javascript" class="tag">JavaScript</a>
+                            <a href="blog.html?category=react" class="tag">React</a>
+                            <a href="blog.html?category=node" class="tag">Node.js</a>
+                            <a href="blog.html?category=ui-ux" class="tag">UI/UX</a>
+                            <a href="blog.html?category=career" class="tag">Career</a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget newsletter-widget">
+                        <h3 class="widget-title">Newsletter</h3>
+                        <p>Subscribe to get the latest posts and tutorials straight to your inbox.</p>
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="related-posts">
+                <h3 class="related-posts-title">You Might Also Like</h3>
+                <div class="related-posts-grid">
+                    <a href="blog-posts/nodejs-best-practices.html" class="related-post-card">
+                        <img src="images/blogpost5.jpg" alt="Node.js Best Practices" class="related-post-image">
+                        <div class="related-post-content">
+                            <span class="related-post-category">Node.js</span>
+                            <h4 class="related-post-title">Node.js Best Practices for Scalable Apps</h4>
+                        </div>
+                    </a>
+                    <a href="blog-posts/react-vs-vue-2023.html" class="related-post-card">
+                        <img src="images/blogpost3.jpg" alt="React vs Vue" class="related-post-image">
+                        <div class="related-post-content">
+                            <span class="related-post-category">React</span>
+                            <h4 class="related-post-title">React vs Vue: Which to Learn in 2023?</h4>
+                        </div>
+                    </a>
+                    <a href="blog-posts/accessible-web-apps.html" class="related-post-card">
+                        <img src="images/blogpost6.jpg" alt="Accessible Web Apps" class="related-post-image">
+                        <div class="related-post-content">
+                            <span class="related-post-category">UI/UX</span>
+                            <h4 class="related-post-title">Building Accessible Web Applications</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Macford <span>Isaiah</span></div>
+                    <p>Full-stack developer creating digital experiences that matter. From concept to code, I bring ideas to life.</p>
+                    <div class="footer-social-links">
+                        <a href="#" class="footer-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Video Editing</a></li>
+                        <li><a href="#">Mentorship</a></li>
+                        <li><a href="#">Performance Optimization</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to my newsletter for the latest updates, tutorials, and resources.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email">
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Macford Isaiah Ninshaba. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        const navItems = document.querySelectorAll('.nav-links li');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+        
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        // Sticky Header
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Newsletter Form Submission
+        const newsletterForms = document.querySelectorAll('.newsletter-form, .newsletter-widget');
+        
+        newsletterForms.forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = form.querySelector('input[type="email"]');
+                if (emailInput.value) {
+                    alert('Thanks for subscribing! You\'ll hear from us soon.');
+                    emailInput.value = '';
+                }
+            });
+        });
+        
+        // Related Posts Carousel
+        const relatedPostsGrid = document.querySelector('.related-posts-grid');
+        if (relatedPostsGrid) {
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+            
+            relatedPostsGrid.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - relatedPostsGrid.offsetLeft;
+                scrollLeft = relatedPostsGrid.scrollLeft;
+            });
+            
+            relatedPostsGrid.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+            
+            relatedPostsGrid.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+            
+            relatedPostsGrid.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - relatedPostsGrid.offsetLeft;
+                const walk = (x - startX) * 2;
+                relatedPostsGrid.scrollLeft = scrollLeft - walk;
+            });
+        }
+    </script>
+</body>
+</html>

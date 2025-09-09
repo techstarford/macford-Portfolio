@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastermind Membership | Macford's Developer Community</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/src/assets/css/membershipCSS/mastermind.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Mac<span>ford</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="membership.html" class="active">Membership</a></li>
+                    <li><a href="coding-resources.html">Resources</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="signup-hero">
+        <div class="container">
+            <div class="vip-badge">VIP Membership</div>
+            <h1>Join the <span class="text-gradient">Mastermind Program</span></h1>
+            <p>Get personalized mentorship, career guidance, and exclusive opportunities to accelerate your development career.</p>
+            <a href="signup.html?plan=mastermind" class="btn btn-primary">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="signup-container">
+            <!-- Plan Summary -->
+            <aside class="plan-summary">
+                <div class="vip-badge">VIP Membership</div>
+                <div class="plan-icon">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <h2 class="plan-name">Mastermind Membership</h2>
+                <div class="plan-price">$99<span>/month</span></div>
+                
+                <ul class="plan-features">
+                    <li><i class="fas fa-check"></i> Weekly 1:1 mentorship</li>
+                    <li><i class="fas fa-check"></i> Project collaboration</li>
+                    <li><i class="fas fa-check"></i> Portfolio review</li>
+                    <li><i class="fas fa-check"></i> Job search assistance</li>
+                    <li><i class="fas fa-check"></i> VIP community access</li>
+                    <li><i class="fas fa-check"></i> All Pro benefits included</li>
+                </ul>
+                
+                <a href="membership.html" class="change-plan">View other plans</a>
+            </aside>
+            
+            <!-- Signup Form -->
+            <div class="signup-form">
+                <h2 class="form-title">Apply for Mastermind</h2>
+                <p class="form-subtitle">Limited spots available - schedule a consultation call to discuss your goals</p>
+                
+                <form id="payment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name" class="form-label">First Name</label>
+                            <input type="text" id="first-name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="last-name" class="form-label">Last Name</label>
+                            <input type="text" id="last-name" class="form-control" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="github" class="form-label">GitHub Profile</label>
+                        <input type="url" id="github" class="form-control" placeholder="https://github.com/yourusername">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="portfolio" class="form-label">Portfolio URL (if available)</label>
+                        <input type="url" id="portfolio" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="goals" class="form-label">Your Development Goals</label>
+                        <textarea id="goals" class="form-control" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Payment Information</label>
+                        <div class="card-element" id="card-element">
+                            <!-- Stripe Card Element will be inserted here -->
+                        </div>
+                        <div id="card-errors" role="alert" style="color: #ff6584; font-size: 0.9rem; margin-top: 5px;"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn">Apply for Mastermind</button>
+                    
+                    <div class="secure-payment">
+                        <i class="fas fa-lock"></i>
+                        <span>Secure payment processed by Stripe</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="benefits-container">
+            <h2 class="section-title">Mastermind <span class="text-gradient">Benefits</span></h2>
+            <p class="section-subtitle">Exclusive advantages of our VIP membership program</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3 class="benefit-title">Personalized Mentorship</h3>
+                    <p>Weekly 1:1 sessions with an experienced developer to guide your learning and career path.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="benefit-title">Project Collaboration</h3>
+                    <p>Work on real-world projects with other Mastermind members to build your portfolio.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="benefit-title">Career Support</h3>
+                    <p>Get help with resume reviews, interview preparation, and job search strategies.</p>
+                </div>
+
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3 class="benefit-title">Job Search Assistance</h3>
+                    <p>Personalized job search strategy, interview preparation, and salary negotiation coaching.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="benefit-title">VIP Community Access</h3>
+                    <p>Exclusive access to our private Mastermind group with top developers and special guest experts.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="benefit-title">All Pro Benefits Included</h3>
+                    <p>Everything from the Pro membership plus these exclusive Mastermind benefits.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Mastermind <span class="text-gradient">Success Stories</span></h2>
+            <p class="section-subtitle">Hear from developers who transformed their careers</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The Mastermind program helped me go from junior developer to team lead in just 9 months. The mentorship was invaluable."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Frontend Team Lead</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"My mentor helped me identify my strengths and build a portfolio that landed me my dream job at a FAANG company."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Senior Developer</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The project collaborations gave me real-world experience that was crucial for transitioning from self-taught to professional developer."</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Aisha Mohammed" class="testimonial-avatar">
+                        <div class="testimonial-author-info">
+                            <h4>Aisha Mohammed</h4>
+                            <p>Full-Stack Developer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Mastermind <span class="text-gradient">FAQ</span></h2>
+            <p class="section-subtitle">Answers to common questions about our VIP program</p>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does the application process work?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>After submitting your application, we'll schedule a consultation call to discuss your goals and ensure the program is a good fit. Acceptance is based on availability and alignment with your objectives.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What's the time commitment?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Members typically spend 5-10 hours per week on mentorship sessions, project work, and skill development. The program is designed to work alongside full-time jobs or studies.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I pause my membership?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer one 30-day pause per year. Just contact us at least 7 days before your next billing date.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I'm not satisfied?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We offer a 14-day satisfaction guarantee. If you're not happy with the program, we'll provide a full refund.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to <span class="text-gradient">Transform</span> Your Career?</h2>
+            <p>Limited spots available - apply now for personalized mentorship and career acceleration.</p>
+            <a href="#header" class="btn btn-outline">Apply Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Mac<span>ford</span></div>
+                    <p>Full-stack developer creating digital experiences that matter. From concept to code, I bring ideas to life.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="membership.html">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="coding-resources.html">Learning Resources</a></li>
+                        <li><a href="#">Free Tutorials</a></li>
+                        <li><a href="#">Coding Challenges</a></li>
+                        <li><a href="#">Developer Tools</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for free coding tips and community updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your Email">
+                        <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="container footer-bottom">
+                <p>By joining, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+
+                <p>Need help? <a href="mailto:support@macford.dev">Contact our support team</a></p>
+            
+                <p>&copy; 2023 Macford Isaiah Ninshaba. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Stripe.js for payment processing -->
+    <script src="https://js.stripe.com/v3/"></script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            
+            // Prevent scrolling when mobile menu is open
+            if (navLinks.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        });
+        
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Sticky Header
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Back to Top Button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Form Validation
+        const form = document.getElementById('payment-form');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirm-password');
+        
+        form.addEventListener('submit', (e) => {
+            // For Mastermind, we might want additional validation
+            const github = document.getElementById('github');
+            const goals = document.getElementById('goals');
+            
+            if (!github.value || !goals.value) {
+                e.preventDefault();
+                alert('Please fill out all required fields including GitHub profile and your goals.');
+                return;
+            }
+            
+            // Form submission would go here
+            // For demo purposes, we'll simulate success
+            e.preventDefault();
+            alert('Application received! We\'ll contact you to schedule your consultation call.');
+            form.reset();
+        });
+        
+        // Initialize Stripe
+        const stripe = Stripe('pk_test_your_publishable_key_here');
+        const elements = stripe.elements();
+        
+        // Create card element
+        const card = elements.create('card', {
+            style: {
+                base: {
+                    color: '#32325d',
+                    fontFamily: '"Poppins", sans-serif',
+                    fontSmoothing: 'antialiased',
+                    fontSize: '16px',
+                    '::placeholder': {
+                        color: '#aab7c4'
+                    }
+                },
+                invalid: {
+                    color: '#fa755a',
+                    iconColor: '#fa755a'
+                }
+            }
+        });
+        
+        card.mount('#card-element');
+        
+        // Handle real-time validation errors
+        card.addEventListener('change', function(event) {
+            const displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+        
+        // Handle form submission
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const submitButton = form.querySelector('button');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Processing...';
+            
+            // Create payment method
+            const { paymentMethod, error } = await stripe.createPaymentMethod({
+                type: 'card',
+                card: card,
+                billing_details: {
+                    name: document.getElementById('first-name').value + ' ' + document.getElementById('last-name').value,
+                    email: document.getElementById('email').value
+                }
+            });
+            
+            if (error) {
+                // Show error
+                const errorElement = document.getElementById('card-errors');
+                errorElement.textContent = error.message;
+                submitButton.disabled = false;
+                submitButton.textContent = 'Apply for Mastermind';
+            } else {
+                // Send paymentMethod.id to your server
+                // This is where you would typically make an AJAX call to your backend
+                // For this example, we'll simulate a successful payment
+                setTimeout(function() {
+                    alert('Application received! We\'ll contact you to schedule your consultation call.');
+                    window.location.href = 'membership-success.html';
+                }, 1500);
+            }
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.getElementById('header').offsetHeight;
+                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

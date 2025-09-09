@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mastering Async/Await in JavaScript | Macford's Blog</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/CSS/blogposts.css/async-await.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="container">
+        <nav class="navbar">
+          <a href="/index.html" class="logo">Mac<span>ford</span></a>
+          <ul class="nav-links">
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/membership.html">Membership</a></li>
+            <li><a href="/coding-resources.html">Resources</a></li>
+            <li><a href="/index.html#contact">Contact</a></li>
+          </ul>
+          <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Blog Content -->
+    <section class="blog-page section">
+      <div class="container">
+        <div class="blog-container">
+          <main class="main-content">
+            <article class="blog-post">
+              <div class="blog-post-header">
+                <img
+                  src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80"
+                  alt="Mastering Async/Await in JavaScript"
+                  class="blog-post-image"
+                />
+                <span class="blog-post-date">April 22, 2023</span>
+              </div>
+              <div class="blog-post-content">
+                <h1 class="blog-post-title">
+                  Mastering Async/Await in JavaScript
+                </h1>
+                <div class="blog-post-meta">
+                  <span>By <a href="#">Macford Isaiah</a></span>
+                  <span>In <a href="#">JavaScript</a></span>
+                  <span>10 min read</span>
+                </div>
+                <div class="blog-post-text">
+                  <p>
+                    Asynchronous programming is a fundamental concept in
+                    JavaScript, and async/await has revolutionized how we write
+                    asynchronous code. In this deep dive, we'll explore
+                    async/await from the ground up, with practical examples and
+                    best practices for writing clean, efficient asynchronous
+                    JavaScript code.
+                  </p>
+
+                  <h2>Understanding Asynchronous JavaScript</h2>
+                  <p>
+                    JavaScript is single-threaded, meaning it can only execute
+                    one operation at a time. To handle operations that might
+                    take time (like API calls, file operations, or database
+                    queries), JavaScript uses an event loop and callback queue
+                    to manage asynchronous operations without blocking the main
+                    thread.
+                  </p>
+
+                  <p>
+                    Traditionally, we used callbacks to handle asynchronous
+                    operations:
+                  </p>
+
+                  <pre><code>function fetchData(callback) {
+    setTimeout(() => {
+        callback('Data received');
+    }, 1000);
+}
+
+fetchData((data) => {
+    console.log(data); // "Data received" after 1 second
+});
+</code></pre>
+
+                  <p>
+                    This led to "callback hell" when dealing with multiple
+                    asynchronous operations. Promises were introduced to solve
+                    this:
+                  </p>
+
+                  <pre><code>function fetchData() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve('Data received');
+        }, 1000);
+    });
+}
+
+fetchData()
+    .then(data => console.log(data));
+</code></pre>
+
+                  <h2>Introducing Async/Await</h2>
+                  <p>
+                    Async/await, introduced in ES2017, is syntactic sugar on top
+                    of promises that makes asynchronous code look and behave
+                    more like synchronous code. Here's the same example with
+                    async/await:
+                  </p>
+
+                  <pre><code>async function getData() {
+    const data = await fetchData();
+    console.log(data); // "Data received" after 1 second
+}
+
+getData();
+</code></pre>
+
+                  <h3>How Async/Await Works</h3>
+                  <p>
+                    The <code>async</code> keyword before a function does two
+                    things:
+                  </p>
+                  <ol>
+                    <li>Makes the function always return a promise</li>
+                    <li>
+                      Allows the <code>await</code> keyword to be used inside it
+                    </li>
+                  </ol>
+
+                  <p>The <code>await</code> keyword:</p>
+                  <ul>
+                    <li>Pauses the execution of the async function</li>
+                    <li>Waits for the promise to resolve</li>
+                    <li>Resumes execution and returns the resolved value</li>
+                    <li>
+                      If the promise rejects, it throws the rejection value
+                      (which you can catch with try/catch)
+                    </li>
+                  </ul>
+
+                  <h2>Error Handling</h2>
+                  <p>
+                    One of the biggest advantages of async/await is that it
+                    allows us to use traditional try/catch blocks for error
+                    handling:
+                  </p>
+
+                  <pre><code>async function getUserData(userId) {
+    try {
+        const user = await fetchUser(userId);
+        const posts = await fetchUserPosts(user.id);
+        return { user, posts };
+    } catch (error) {
+        console.error('Failed to fetch user data:', error);
+        // Handle the error or rethrow it
+        throw error;
+    }
+}
+</code></pre>
+
+                  <h2>Best Practices</h2>
+                  <p>
+                    Here are some best practices when working with async/await:
+                  </p>
+
+                  <h3>1. Don't Forget the Await</h3>
+                  <p>
+                    Forgetting the <code>await</code> keyword is a common
+                    mistake that can lead to unexpected behavior:
+                  </p>
+
+                  <pre><code>async function processData() {
+    const data = fetchData(); // Oops! Forgot await
+    console.log(data); // Promise { &lt;pending&gt; } instead of the actual data
+}
+</code></pre>
+
+                  <h3>2. Avoid Unnecessary Serialization</h3>
+                  <p>
+                    When operations don't depend on each other, run them in
+                    parallel:
+                  </p>
+
+                  <pre><code>// Inefficient (serial)
+async function getData() {
+    const user = await fetchUser();
+    const posts = await fetchPosts();
+    return { user, posts };
+}
+
+// Efficient (parallel)
+async function getData() {
+    const [user, posts] = await Promise.all([
+        fetchUser(),
+        fetchPosts()
+    ]);
+    return { user, posts };
+}
+</code></pre>
+
+                  <h3>3. Consider Error Boundaries</h3>
+                  <p>
+                    For critical operations, consider wrapping them in error
+                    boundaries to prevent one failed operation from stopping the
+                    entire process:
+                  </p>
+
+                  <pre><code>async function withErrorBoundary(operation, fallback) {
+    try {
+        return await operation();
+    } catch (error) {
+        console.error('Operation failed:', error);
+        return fallback;
+    }
+}
+
+const result = await withErrorBoundary(
+    () => fetchCriticalData(),
+    { defaultValue: 42 }
+);
+</code></pre>
+
+                  <h3>4. Use Promise Utilities</h3>
+                  <p>
+                    Leverage Promise utility functions like
+                    <code>Promise.all</code>, <code>Promise.race</code>,
+                    <code>Promise.allSettled</code>, and
+                    <code>Promise.any</code>:
+                  </p>
+
+                  <pre><code>// Wait for all promises to complete, regardless of rejection
+const results = await Promise.allSettled([
+    fetchFromSourceA(),
+    fetchFromSourceB(),
+    fetchFromSourceC()
+]);
+
+// Get the first successful result
+const firstValid = await Promise.any([
+    fetchPrimaryData(),
+    fetchFallbackData()
+]);
+</code></pre>
+
+                  <h2>Advanced Patterns</h2>
+                  <p>
+                    Let's explore some advanced async/await patterns that can
+                    help in complex scenarios.
+                  </p>
+
+                  <h3>1. Async Iteration</h3>
+                  <p>
+                    Use <code>for await...of</code> to iterate over asynchronous
+                    data sources:
+                  </p>
+
+                  <pre><code>async function processItems(items) {
+    for await (const item of items) {
+        await processItem(item);
+    }
+}
+</code></pre>
+
+                  <h3>2. Async Generators</h3>
+                  <p>
+                    Combine async functions with generators for powerful data
+                    processing pipelines:
+                  </p>
+
+                  <pre><code>async function* asyncGenerator() {
+    let i = 0;
+    while (i < 5) {
+        await sleep(1000);
+        yield i++;
+    }
+}
+
+for await (const num of asyncGenerator()) {
+    console.log(num); // 0, 1, 2, 3, 4 with 1 second delay
+}
+</code></pre>
+
+                  <h3>3. Cancellation with AbortController</h3>
+                  <p>Implement cancellable async operations:</p>
+
+                  <pre><code>async function fetchWithTimeout(url, { signal } = {}) {
+    const response = await fetch(url, { signal });
+    if (response.ok) {
+        return response.json();
+    }
+    throw new Error('Request failed');
+}
+
+const controller = new AbortController();
+setTimeout(() => controller.abort(), 5000); // Cancel after 5 seconds
+
+try {
+    const data = await fetchWithTimeout('https://api.example.com/data', {
+        signal: controller.signal
+    });
+    console.log(data);
+} catch (error) {
+    if (error.name === 'AbortError') {
+        console.log('Request was aborted');
+    } else {
+        console.error('Request failed:', error);
+    }
+}
+</code></pre>
+
+                  <h2>Common Pitfalls</h2>
+                  <p>Be aware of these common async/await pitfalls:</p>
+
+                  <h3>1. Unnecessary Async in Array Methods</h3>
+                  <p>
+                    Array methods like <code>map</code>, <code>filter</code>,
+                    and <code>forEach</code> don't work well with async
+                    functions:
+                  </p>
+
+                  <pre><code>// This won't work as expected
+const results = items.map(async (item) => {
+    return await processItem(item);
+});
+// results is an array of promises, not processed items
+
+// Instead, use Promise.all
+const results = await Promise.all(items.map(processItem));
+</code></pre>
+
+                  <h3>2. Mixing Async/Await with Promise Chains</h3>
+                  <p>
+                    While you can mix them, it often leads to confusing code:
+                  </p>
+
+                  <pre><code>// Confusing mixture
+async function getData() {
+    return fetchData()
+        .then(data => transformData(data))
+        .catch(error => {
+            console.error(error);
+            return defaultData;
+        });
+}
+
+// Cleaner with pure async/await
+async function getData() {
+    try {
+        const data = await fetchData();
+        return transformData(data);
+    } catch (error) {
+        console.error(error);
+        return defaultData;
+    }
+}
+</code></pre>
+
+                  <h3>3. Ignoring Unhandled Rejections</h3>
+                  <p>
+                    Always handle promise rejections, either with try/catch or
+                    by attaching a .catch() handler:
+                  </p>
+
+                  <pre><code>// Dangerous - unhandled rejection if fetch fails
+async function getData() {
+    const data = await fetchData();
+    return data;
+}
+
+// Safe
+async function getData() {
+    try {
+        const data = await fetchData();
+        return data;
+    } catch (error) {
+        console.error('Failed to fetch data:', error);
+        throw error; // Or return a default value
+    }
+}
+</code></pre>
+
+                  <h2>Performance Considerations</h2>
+                  <p>
+                    While async/await makes code more readable, be mindful of
+                    performance:
+                  </p>
+
+                  <h3>1. Memory Usage</h3>
+                  <p>
+                    Each async function call creates a new execution context
+                    that stays in memory until the promise resolves. For
+                    long-running applications, this can lead to memory leaks if
+                    not managed properly.
+                  </p>
+
+                  <h3>2. Microtask Queue</h3>
+                  <p>
+                    Await expressions queue microtasks, which are processed
+                    after the current synchronous code completes but before the
+                    next event loop iteration. This can lead to starvation if
+                    you have many microtasks.
+                  </p>
+
+                  <h3>3. Stack Traces</h3>
+                  <p>
+                    Async/await provides better stack traces compared to promise
+                    chains, making debugging easier.
+                  </p>
+
+                  <h2>Real-World Example</h2>
+                  <p>
+                    Let's look at a complete example of an API client using
+                    async/await:
+                  </p>
+
+                  <pre><code>class ApiClient {
+    constructor(baseUrl) {
+        this.baseUrl = baseUrl;
+    }
+    
+    async request(endpoint, options = {}) {
+        const url = `${this.baseUrl}${endpoint}`;
+        const response = await fetch(url, {
+            headers: {
+                'Content-Type': 'application/json',
+                ...options.headers
+            },
+            ...options
+        });
+        
+        if (!response.ok) {
+            const error = new Error(`HTTP error! status: ${response.status}`);
+            error.status = response.status;
+            throw error;
+        }
+        
+        return response.json();
+    }
+    
+    async getPosts() {
+        try {
+            return await this.request('/posts');
+        } catch (error) {
+            console.error('Failed to fetch posts:', error);
+            return [];
+        }
+    }
+    
+    async createPost(postData) {
+        return this.request('/posts', {
+            method: 'POST',
+            body: JSON.stringify(postData)
+        });
+    }
+    
+    async getPostsWithUsers() {
+        const [posts, users] = await Promise.all([
+            this.getPosts(),
+            this.request('/users')
+        ]);
+        
+        return posts.map(post => ({
+            ...post,
+            user: users.find(user => user.id === post.userId)
+        }));
+    }
+}
+
+// Usage
+const api = new ApiClient('https://jsonplaceholder.typicode.com');
+
+async function displayPosts() {
+    try {
+        const posts = await api.getPostsWithUsers();
+        console.log('Posts with user data:', posts);
+    } catch (error) {
+        console.error('Failed to load posts:', error);
+    }
+}
+
+displayPosts();
+</code></pre>
+
+                  <h2>Conclusion</h2>
+                  <p>
+                    Async/await has transformed how we write asynchronous
+                    JavaScript, making our code more readable and maintainable
+                    while retaining all the power of promises. By following best
+                    practices and being aware of common pitfalls, you can write
+                    robust asynchronous code that's both efficient and easy to
+                    understand.
+                  </p>
+
+                  <p>Remember:</p>
+                  <ul>
+                    <li>Always handle errors with try/catch</li>
+                    <li>
+                      Run independent operations in parallel when possible
+                    </li>
+                    <li>Be mindful of performance implications</li>
+                    <li>
+                      Use modern patterns like async iteration when appropriate
+                    </li>
+                    <li>Keep your async code clean and consistent</li>
+                  </ul>
+
+                  <p>
+                    With these techniques in your toolkit, you'll be
+                    well-equipped to handle any asynchronous programming
+                    challenge in JavaScript.
+                  </p>
+                </div>
+
+                <div class="blog-post-tags">
+                  <a href="#" class="blog-post-tag">JavaScript</a>
+                  <a href="#" class="blog-post-tag">Async/Await</a>
+                  <a href="#" class="blog-post-tag">Promises</a>
+                  <a href="#" class="blog-post-tag">ES2017</a>
+                  <a href="#" class="blog-post-tag">Best Practices</a>
+                </div>
+
+                <div class="blog-post-share">
+                  <span>Share this post:</span>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fas fa-link"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <div class="author-box">
+              <img
+                src="/images/Macford Portrait.jpg"
+                alt="Macford Isaiah"
+                class="author-avatar"
+              />
+              <div class="author-info">
+                <h4>Macford Isaiah</h4>
+                <p>
+                  Full-stack developer with a passion for teaching and creating
+                  digital experiences. I specialize in JavaScript technologies
+                  across the stack and love sharing my knowledge through
+                  tutorials and blog posts.
+                </p>
+                <div class="author-social">
+                  <a href="https://x.com/StarfordTech7"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="https://github.com/techstarford"
+                    ><i class="fab fa-github"></i
+                  ></a>
+                  <a
+                    href="https://www.linkedin.com/in/ninshaba-isaiah-a551a2360 "
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                  <a href="https://www.youtube.com/@StarfordTech-77"
+                    ><i class="fab fa-youtube"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="comments-section">
+              <h3 class="comments-title">4 Comments</h3>
+
+              <div class="comment">
+                <img
+                  src="https://randomuser.me/api/portraits/women/32.jpg"
+                  alt="Emily Rodriguez"
+                  class="comment-avatar"
+                />
+                <div class="comment-content">
+                  <h5>Emily Rodriguez</h5>
+                  <div class="comment-meta">April 25, 2023 at 10:15 AM</div>
+                  <p class="comment-text">
+                    This is one of the clearest explanations of async/await I've
+                    come across. The real-world example with the ApiClient class
+                    was particularly helpful. Thanks for sharing!
+                  </p>
+                  <a href="#" class="comment-reply">Reply</a>
+                </div>
+              </div>
+
+              <div class="comment">
+                <img
+                  src="https://randomuser.me/api/portraits/men/45.jpg"
+                  alt="James Wilson"
+                  class="comment-avatar"
+                />
+                <div class="comment-content">
+                  <h5>James Wilson</h5>
+                  <div class="comment-meta">April 24, 2023 at 3:42 PM</div>
+                  <p class="comment-text">
+                    Great article! I've been using async/await for a while but
+                    learned some new patterns from this, especially the
+                    cancellation with AbortController. Would love to see a
+                    follow-up on async testing patterns.
+                  </p>
+                  <a href="#" class="comment-reply">Reply</a>
+
+                  <div class="comment" style="margin-top: 20px">
+                    <img
+                      src="/images/Macford Portrait.jpg"
+                      alt="Macford Isaiah"
+                      class="comment-avatar"
+                    />
+                    <div class="comment-content">
+                      <h5>Macford Isaiah</h5>
+                      <div class="comment-meta">April 24, 2023 at 4:30 PM</div>
+                      <p class="comment-text">
+                        Thanks, James! Async testing is definitely on my list
+                        for future posts. I'll cover Jest's async capabilities
+                        and patterns for testing async code effectively.
+                      </p>
+                      <a href="#" class="comment-reply">Reply</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="comment">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Sophia Chen"
+                  class="comment-avatar"
+                />
+                <div class="comment-content">
+                  <h5>Sophia Chen</h5>
+                  <div class="comment-meta">April 23, 2023 at 8:05 PM</div>
+                  <p class="comment-text">
+                    The performance considerations section was eye-opening. I
+                    hadn't considered the microtask queue implications before.
+                    This article is going straight to my bookmarks!
+                  </p>
+                  <a href="#" class="comment-reply">Reply</a>
+                </div>
+              </div>
+
+              <div class="comment">
+                <img
+                  src="https://randomuser.me/api/portraits/men/22.jpg"
+                  alt="Daniel Kim"
+                  class="comment-avatar"
+                />
+                <div class="comment-content">
+                  <h5>Daniel Kim</h5>
+                  <div class="comment-meta">April 22, 2023 at 6:30 PM</div>
+                  <p class="comment-text">
+                    Excellent breakdown of async/await. The common pitfalls
+                    section saved me from some bad practices I didn't realize I
+                    was using. Looking forward to more JavaScript deep dives!
+                  </p>
+                  <a href="#" class="comment-reply">Reply</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="comment-form">
+              <h3 class="comment-form-title">Leave a Comment</h3>
+              <form>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Your Name"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Your Email"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea
+                    class="form-control"
+                    placeholder="Your Comment"
+                    rows="5"
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Post Comment</button>
+              </form>
+            </div>
+
+            <div class="related-posts">
+              <h3 class="related-posts-title">You Might Also Like</h3>
+              <div class="related-posts-grid">
+                <article class="related-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="MERN Stack Guide"
+                    class="related-post-image"
+                  />
+                  <div class="related-post-content">
+                    <h4 class="related-post-title">
+                      How to Build a MERN Stack App in 2023
+                    </h4>
+                    <div class="related-post-date">June 15, 2023</div>
+                    <p class="related-post-excerpt">
+                      A step-by-step guide to building a full-stack application
+                      with MongoDB, Express, React, and Node.js with modern best
+                      practices.
+                    </p>
+                    <a
+                      href="blog-posts/How to Build a MERN Stack App in 2023.html"
+                      class="related-post-link"
+                      >Read More</a
+                    >
+                  </div>
+                </article>
+
+                <article class="related-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                    alt="React vs Vue"
+                    class="related-post-image"
+                  />
+                  <div class="related-post-content">
+                    <h4 class="related-post-title">
+                      React vs Vue: Which One Should You Learn in 2023?
+                    </h4>
+                    <div class="related-post-date">May 28, 2023</div>
+                    <p class="related-post-excerpt">
+                      Comparing two of the most popular JavaScript frameworks to
+                      help you decide which one to learn next based on your
+                      goals.
+                    </p>
+                    <a href="#" class="related-post-link">Read More</a>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </main>
+
+          <aside class="sidebar">
+            <div class="widget">
+              <h3 class="widget-title">Search</h3>
+              <form class="search-form">
+                <button type="submit" class="search-button">
+                  <i class="fas fa-search"></i>
+                </button>
+                <input
+                  type="text"
+                  class="search-input"
+                  placeholder="Search..."
+                />
+              </form>
+            </div>
+
+            <div class="widget">
+              <h3 class="widget-title">About Me</h3>
+              <div style="text-align: center">
+                <img
+                  src="/images/Macford Portrait.jpg"
+                  alt="Macford Isaiah"
+                  style="
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    border: 3px solid var(--primary);
+                    margin-bottom: 15px;
+                  "
+                />
+                <p style="margin-bottom: 15px">
+                  I'm Macford Isaiah, a full-stack developer passionate about
+                  creating digital experiences and sharing knowledge through
+                  tutorials and blog posts.
+                </p>
+                <a
+                  href="index.html#about"
+                  class="btn btn-outline"
+                  style="width: 100%; text-align: center"
+                  >Read More</a
+                >
+              </div>
+            </div>
+
+            <div class="widget">
+              <h3 class="widget-title">Categories</h3>
+              <ul class="categories-list">
+                <li>
+                  <a href="#">Web Development <span>12</span></a>
+                </li>
+                <li>
+                  <a href="#">JavaScript <span>8</span></a>
+                </li>
+                <li>
+                  <a href="#">React <span>5</span></a>
+                </li>
+                <li>
+                  <a href="#">Node.js <span>7</span></a>
+                </li>
+                <li>
+                  <a href="#">UI/UX Design <span>4</span></a>
+                </li>
+                <li>
+                  <a href="#">Freelancing <span>3</span></a>
+                </li>
+                <li>
+                  <a href="#">Career Advice <span>6</span></a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="widget">
+              <h3 class="widget-title">Popular Tags</h3>
+              <ul class="tags-list">
+                <li><a href="#">MERN</a></li>
+                <li><a href="#">React</a></li>
+                <li><a href="#">JavaScript</a></li>
+                <li><a href="#">Node.js</a></li>
+                <li><a href="#">MongoDB</a></li>
+                <li><a href="#">Express</a></li>
+                <li><a href="#">Frontend</a></li>
+                <li><a href="#">Backend</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">Tutorial</a></li>
+                <li><a href="#">Tips</a></li>
+              </ul>
+            </div>
+
+            <div class="widget">
+              <h3 class="widget-title">Recent Posts</h3>
+              <ul class="recent-posts">
+                <li class="recent-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                    alt="MERN Stack Guide"
+                    class="recent-post-image"
+                  />
+                  <div class="recent-post-content">
+                    <h4>
+                      <a
+                        href="blog-posts/How to Build a MERN Stack App in 2023.html"
+                        >How to Build a MERN Stack App in 2023</a
+                      >
+                    </h4>
+                    <div class="recent-post-date">June 15, 2023</div>
+                  </div>
+                </li>
+                <li class="recent-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80"
+                    alt="React vs Vue"
+                    class="recent-post-image"
+                  />
+                  <div class="recent-post-content">
+                    <h4>
+                      <a href="#"
+                        >React vs Vue: Which One Should You Learn in 2023?</a
+                      >
+                    </h4>
+                    <div class="recent-post-date">May 28, 2023</div>
+                  </div>
+                </li>
+                <li class="recent-post">
+                  <img
+                    src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                    alt="Freelancing Tips"
+                    class="recent-post-image"
+                  />
+                  <div class="recent-post-content">
+                    <h4>
+                      <a href="#">Freelancing Tips for Beginner Developers</a>
+                    </h4>
+                    <div class="recent-post-date">May 10, 2023</div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="widget">
+              <h3 class="widget-title">Newsletter</h3>
+              <p>
+                Subscribe to my newsletter to get the latest posts and resources
+                delivered to your inbox.
+              </p>
+              <form class="newsletter-form">
+                <input
+                  type="email"
+                  class="newsletter-input"
+                  placeholder="Your Email"
+                  required
+                />
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-about">
+            <div class="footer-logo">Macford <span>Isaiah</span></div>
+            <p>
+              Full-stack developer creating digital experiences that matter.
+              From concept to code, I bring ideas to life.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-link"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About</a></li>
+              <li><a href="index.html#services">Services</a></li>
+              <li><a href="index.html#portfolio">Portfolio</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#">Web Development</a></li>
+              <li><a href="#">UI/UX Design</a></li>
+              <li><a href="#">Video Editing</a></li>
+              <li><a href="#">Mentorship</a></li>
+              <li><a href="#">Performance Optimization</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter">
+            <h3>Newsletter</h3>
+            <p>
+              Subscribe to my newsletter for the latest updates, tutorials, and
+              resources.
+            </p>
+            <form class="newsletter-form">
+              <input
+                type="email"
+                class="newsletter-input"
+                placeholder="Your Email"
+              />
+              <button type="submit" class="newsletter-btn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2023 Macford Isaiah Ninshaba. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+      // Mobile Navigation
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+      const navItems = document.querySelectorAll(".nav-links li");
+
+      hamburger.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("active");
+      });
+
+      navItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          hamburger.classList.remove("active");
+        });
+      });
+
+      // Sticky Header
+      const header = document.getElementById("header");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          header.classList.add("scrolled");
+        } else {
+          header.classList.remove("scrolled");
+        }
+      });
+
+      // Back to Top Button
+      const backToTopBtn = document.querySelector(".back-to-top");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.add("active");
+        } else {
+          backToTopBtn.classList.remove("active");
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
+      // Smooth Scrolling for Navigation Links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Form Submission
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Here you would typically send the form data to a server
+        // For now, we'll just show an alert
+        alert("Thank you for your message! I will get back to you soon.");
+        contactForm.reset();
+      });
+
+      // Newsletter Form Submission
+      const newsletterForm = document.querySelector(".newsletter-form");
+
+      newsletterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const emailInput = newsletterForm.querySelector(".newsletter-input");
+        alert(`Thank you for subscribing with ${emailInput.value}!`);
+        emailInput.value = "";
+      });
+
+      // Animation on Scroll
+      const animateOnScroll = () => {
+        const elements = document.querySelectorAll(
+          ".blog-post, .widget, .related-post"
+        );
+
+        elements.forEach((element) => {
+          const elementPosition = element.getBoundingClientRect().top;
+          const screenPosition = window.innerHeight / 1.2;
+
+          if (elementPosition < screenPosition) {
+            element.style.opacity = "1";
+            element.style.transform = "translateY(0)";
+          }
+        });
+      };
+
+      // Set initial state for animated elements
+      document
+        .querySelectorAll(".blog-post, .widget, .related-post")
+        .forEach((element) => {
+          element.style.opacity = "0";
+          element.style.transform = "translateY(20px)";
+          element.style.transition = "all 0.5s ease";
+        });
+
+      window.addEventListener("scroll", animateOnScroll);
+      window.addEventListener("load", animateOnScroll);
+    </script>
+  </body>
+</html>

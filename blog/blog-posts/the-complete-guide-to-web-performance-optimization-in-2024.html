@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Complete Guide to Web Performance Optimization in 2024 | Macford</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/blogposts-css/the-complete-guide-to-web-perfomance-optimization.css">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo">Mac<span>ford</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="membership.html">Membership</a></li>
+                    <li><a href="coding-resources.html">Resources</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Post Content -->
+    <section class="blog-post">
+        <div class="container">
+            <div class="blog-content">
+                <article>
+                    <div class="post-header">
+                        <span class="post-category">Web Development</span>
+                        <h1 class="post-title">The Complete Guide to Web Performance Optimization in 2024</h1>
+                        <div class="post-meta">
+                            <span class="post-meta-item"><i class="far fa-user"></i> Macford Isaiah</span>
+                            <span class="post-meta-item"><i class="far fa-calendar"></i> April 18, 2024</span>
+                            <span class="post-meta-item"><i class="far fa-clock"></i> 20 min read</span>
+                            <span class="post-meta-item"><i class="far fa-eye"></i> 4.2K views</span>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Web Performance Optimization" class="post-featured-image">
+                    </div>
+
+                    <div class="post-content">
+                        <p>Web performance has never been more critical. In 2024, with Core Web Vitals directly impacting search rankings and user experience more important than ever, optimizing your website's performance is a necessity, not a luxury. This comprehensive guide will walk you through the latest techniques, tools, and strategies to make your website blazing fast.</p>
+
+                        <h2>Why Performance Matters More Than Ever</h2>
+                        <p>The performance landscape has evolved significantly:</p>
+                        <ul>
+                            <li><strong>Google's ranking algorithms</strong> now heavily weigh Core Web Vitals</li>
+                            <li><strong>User expectations</strong> have increased—53% of mobile users abandon sites that take longer than 3 seconds to load</li>
+                            <li><strong>Conversion rates</strong> drop by an average of 4.42% with each additional second of load time (beyond 1 second)</li>
+                            <li><strong>New web technologies</strong> like WebAssembly and HTTP/3 offer performance opportunities</li>
+                        </ul>
+
+                        <h2>Core Web Vitals: The 2024 Update</h2>
+                        <p>Google's Core Web Vitals remain the gold standard for measuring user experience. Here's what's changed in 2024:</p>
+
+                        <div class="metric-cards">
+                            <div class="metric-card">
+                                <div class="metric-value">&lt;2.5s</div>
+                                <div class="metric-label">Largest Contentful Paint (LCP)</div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-value">&lt;100ms</div>
+                                <div class="metric-label">First Input Delay (FID)</div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-value">&lt;0.1</div>
+                                <div class="metric-label">Cumulative Layout Shift (CLS)</div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-value">&lt;1s</div>
+                                <div class="metric-label">Interaction to Next Paint (INP)</div>
+                            </div>
+                        </div>
+
+                        <p><strong>New in 2024:</strong> Interaction to Next Paint (INP) is replacing First Input Delay (FID) as a Core Web Vital. INP measures responsiveness more comprehensively by observing all interactions throughout a page's lifecycle.</p>
+
+                        <h2>Performance Optimization Checklist</h2>
+                        <p>Follow this comprehensive checklist to optimize your website's performance:</p>
+
+                        <div class="checklist">
+                            <div class="checklist-item">
+                                <div class="checklist-checkbox checked"></div>
+                                <div class="checklist-content">
+                                    <h4>Optimize Images</h4>
+                                    <p>Use modern formats like WebP/AVIF, implement lazy loading, and serve responsive images with srcset.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <div class="checklist-checkbox checked"></div>
+                                <div class="checklist-content">
+                                    <h4>Minify and Bundle Assets</h4>
+                                    <p>Reduce CSS/JS file sizes and combine files where possible to minimize HTTP requests.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <h4>Implement Critical CSS</h4>
+                                    <p>Inline above-the-fold CSS and defer non-critical styles to prevent render-blocking.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <h4>Leverage Browser Caching</h4>
+                                    <p>Set proper cache headers to allow assets to be stored locally on repeat visits.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <h4>Enable Compression</h4>
+                                    <p>Use Brotli or Gzip compression to reduce transfer sizes.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <h4>Use a CDN</h4>
+                                    <p>Distribute content globally to reduce latency.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <h4>Optimize Web Fonts</h4>
+                                    <p>Subset fonts, use font-display: swap, and preload critical fonts.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="checklist-item">
+                                <div class="checklist-checkbox"></div>
+                                <div class="checklist-content">
+                                    <h4>Reduce JavaScript Execution</h4>
+                                    <p>Code-split, defer non-critical JS, and remove unused code.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Advanced Optimization Techniques</h2>
+                        <p>For developers looking to push performance further, these advanced techniques can yield significant improvements:</p>
+
+                        <h3>1. Edge Computing with Workers</h3>
+                        <p>Platforms like Cloudflare Workers and Deno Deploy allow you to run code at the edge, closer to users:</p>
+                        <pre><code>// Example Cloudflare Worker for A/B testing
+addEventListener('fetch', event => {
+    event.respondWith(handleRequest(event.request));
+});
+
+async function handleRequest(request) {
+    // Serve different assets based on user location
+    const country = request.cf.country;
+    if (country === 'GB') {
+        return fetch('https://uk-cdn.example.com/optimized-assets');
+    }
+    return fetch('https://us-cdn.example.com/optimized-assets');
+}</code></pre>
+
+                        <h3>2. Partial Hydration and Islands Architecture</h3>
+                        <p>Modern frameworks like Astro and Marko.js allow you to hydrate only the interactive parts of your page:</p>
+                        <pre><code>// Astro component example with partial hydration
+---
+// Static at build time
+const posts = await fetch('https://api.example.com/posts').then(r => r.json());
+---
+
+&lt;div>
+    &lt;!-- Static content --&gt;
+    {posts.map(post => (
+        &lt;article>
+            &lt;h2>{post.title}&lt;/h2>
+            &lt;p>{post.excerpt}&lt;/p>
+        &lt;/article>
+    ))}
+
+    &lt;!-- Interactive component with client-side hydration --&gt;
+    &lt;Search client:load />
+&lt;/div></code></pre>
+
+                        <h3>3. Next-Gen Image Formats</h3>
+                        <p>AVIF adoption has grown significantly in 2024, offering superior compression to WebP:</p>
+                        <pre><code>&lt;picture>
+    &lt;source srcset="image.avif" type="image/avif">
+    &lt;source srcset="image.webp" type="image/webp">
+    &lt;img src="image.jpg" alt="Fallback for older browsers">
+&lt;/picture></code></pre>
+
+                        <h3>4. HTTP/3 and QUIC Protocol</h3>
+                        <p>HTTP/3 adoption has reached 35% of websites, offering:</p>
+                        <ul>
+                            <li>Faster connection establishment (0-RTT)</li>
+                            <li>Improved multiplexing without head-of-line blocking</li>
+                            <li>Better performance on lossy networks</li>
+                        </ul>
+
+                        <h2>Performance Testing Tools</h2>
+                        <p>These tools will help you measure and improve your website's performance:</p>
+
+                        <div class="metric-cards">
+                            <div class="metric-card">
+                                <div class="metric-value">Lighthouse</div>
+                                <div class="metric-label">Comprehensive audits in Chrome DevTools</div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-value">WebPageTest</div>
+                                <div class="metric-label">Advanced testing from global locations</div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-value">CrUX</div>
+                                <div class="metric-label">Real-user performance data from Chrome</div>
+                            </div>
+                            
+                            <div class="metric-card">
+                                <div class="metric-value">SpeedCurve</div>
+                                <div class="metric-label">Continuous performance monitoring</div>
+                            </div>
+                        </div>
+
+                        <h2>Case Study: E-Commerce Performance Optimization</h2>
+                        <p>We recently optimized a Shopify store with these results:</p>
+
+                        <table style="width: 100%; border-collapse: collapse; margin: 30px 0;">
+                            <thead>
+                                <tr style="background-color: rgba(108, 99, 255, 0.1);">
+                                    <th style="padding: 12px; text-align: left; border-bottom: 2px solid var(--primary);">Metric</th>
+                                    <th style="padding: 12px; text-align: left; border-bottom: 2px solid var(--primary);">Before</th>
+                                    <th style="padding: 12px; text-align: left; border-bottom: 2px solid var(--primary);">After</th>
+                                    <th style="padding: 12px; text-align: left; border-bottom: 2px solid var(--primary);">Improvement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <td style="padding: 12px;">LCP</td>
+                                    <td style="padding: 12px;">4.2s</td>
+                                    <td style="padding: 12px;">1.8s</td>
+                                    <td style="padding: 12px;">57%</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <td style="padding: 12px;">INP</td>
+                                    <td style="padding: 12px;">320ms</td>
+                                    <td style="padding: 12px;">85ms</td>
+                                    <td style="padding: 12px;">73%</td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+                                    <td style="padding: 12px;">CLS</td>
+                                    <td style="padding: 12px;">0.25</td>
+                                    <td style="padding: 12px;">0.02</td>
+                                    <td style="padding: 12px;">92%</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px; font-weight: bold;">Conversion Rate</td>
+                                    <td style="padding: 12px; font-weight: bold;">1.8%</td>
+                                    <td style="padding: 12px; font-weight: bold;">2.7%</td>
+                                    <td style="padding: 12px; font-weight: bold;">50%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h2>The Future of Web Performance</h2>
+                        <p>Emerging technologies that will shape performance optimization in 2025 and beyond:</p>
+                        <ul>
+                            <li><strong>Speculation Rules API:</strong> Prefetch pages users are likely to visit next</li>
+                            <li><strong>WebGPU:</strong> High-performance graphics and computation</li>
+                            <li><strong>Baseline 2024:</strong> New web platform standard focusing on performance</li>
+                            <li><strong>AI-powered optimization:</strong> Automatic code splitting and asset optimization</li>
+                        </ul>
+
+                        <blockquote>"Performance optimization is never done—it's an ongoing process of measurement, improvement, and adaptation to new technologies and user expectations."</blockquote>
+
+                        <h2>Getting Started with Performance Optimization</h2>
+                        <p>Ready to optimize your website? Follow this action plan:</p>
+                        <ol>
+                            <li><strong>Measure:</strong> Run Lighthouse audits and WebPageTest analyses</li>
+                            <li><strong>Prioritize:</strong> Focus on the biggest opportunities first</li>
+                            <li><strong>Implement:</strong> Apply the techniques from this guide</li>
+                            <li><strong>Monitor:</strong> Set up continuous                        <h2>Getting Started with Performance Optimization</h2>
+                        <p>Ready to optimize your website? Follow this action plan:</p>
+                        <ol>
+                            <li><strong>Measure:</strong> Run Lighthouse audits and WebPageTest analyses</li>
+                            <li><strong>Prioritize:</strong> Focus on the biggest opportunities first</li>
+                            <li><strong>Implement:</strong> Apply the techniques from this guide</li>
+                            <li><strong>Monitor:</strong> Set up continuous performance monitoring with tools like SpeedCurve or Lighthouse CI</li>
+                            <li><strong>Iterate:</strong> Performance optimization is an ongoing process - regularly revisit and improve</li>
+                        </ol>
+
+                        <div class="post-tags">
+                            <a href="#" class="post-tag">#webperf</a>
+                            <a href="#" class="post-tag">#corewebvitals</a>
+                            <a href="#" class="post-tag">#optimization</a>
+                            <a href="#" class="post-tag">#frontend</a>
+                        </div>
+
+                        <div class="social-share">
+                            <a href="#" class="share-btn share-facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="share-btn share-twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="share-btn share-linkedin"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="share-btn share-reddit"><i class="fab fa-reddit-alien"></i></a>
+                        </div>
+
+                        <div class="author-card">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Macford Isaiah" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Macford Isaiah</h4>
+                                <p>Frontend Architect and Performance Specialist with over 10 years of experience helping companies optimize their web applications. When not coding, I enjoy hiking and photography.</p>
+                                <div class="author-social">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fas fa-globe"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="related-posts">
+                    <h3 class="related-posts-title">You Might Also Like</h3>
+                    <div class="related-posts-grid">
+                        <div class="related-post-card">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="JavaScript Performance" class="related-post-image">
+                            <div class="related-post-content">
+                                <span class="related-post-category">JavaScript</span>
+                                <h4 class="related-post-title">Advanced JavaScript Performance Optimization Techniques</h4>
+                                <div class="related-post-meta">
+                                    <span><i class="far fa-clock"></i> 12 min read</span>
+                                    <span><i class="far fa-calendar"></i> March 5, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="related-post-card">
+                            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="React Optimization" class="related-post-image">
+                            <div class="related-post-content">
+                                <span class="related-post-category">React</span>
+                                <h4 class="related-post-title">Optimizing React Applications for Peak Performance</h4>
+                                <div class="related-post-meta">
+                                    <span><i class="far fa-clock"></i> 15 min read</span>
+                                    <span><i class="far fa-calendar"></i> February 18, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="related-post-card">
+                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="SEO & Performance" class="related-post-image">
+                            <div class="related-post-content">
+                                <span class="related-post-category">SEO</span>
+                                <h4 class="related-post-title">How Web Performance Impacts SEO in 2024</h4>
+                                <div class="related-post-meta">
+                                    <span><i class="far fa-clock"></i> 10 min read</span>
+                                    <span><i class="far fa-calendar"></i> January 29, 2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="blog-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">About the Author</h3>
+                    <div class="author-info-small">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Macford Isaiah" class="author-avatar-small">
+                        <p>Macford is a frontend performance specialist with a passion for building blazing fast web experiences. He's helped numerous companies improve their Core Web Vitals scores.</p>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Newsletter</h3>
+                    <p>Get the latest web performance tips and tutorials straight to your inbox.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" class="newsletter-input" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Popular Posts</h3>
+                    <div class="popular-posts-list">
+                        <div class="popular-post">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Popular Post" class="popular-post-image">
+                            <div>
+                                <h4 class="popular-post-title">JavaScript Performance Optimization</h4>
+                                <span class="popular-post-date">March 5, 2024</span>
+                            </div>
+                        </div>
+                        
+                        <div class="popular-post">
+                            <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Popular Post" class="popular-post-image">
+                            <div>
+                                <h4 class="popular-post-title">React Performance Guide</h4>
+                                <span class="popular-post-date">February 18, 2024</span>
+                            </div>
+                        </div>
+                        
+                        <div class="popular-post">
+                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Popular Post" class="popular-post-image">
+                            <div>
+                                <h4 class="popular-post-title">SEO & Performance Connection</h4>
+                                <span class="popular-post-date">January 29, 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Tags</h3>
+                    <div class="tags-list">
+                        <a href="#" class="tag">#performance</a>
+                        <a href="#" class="tag">#webdev</a>
+                        <a href="#" class="tag">#javascript</a>
+                        <a href="#" class="tag">#react</a>
+                        <a href="#" class="tag">#seo</a>
+                        <a href="#" class="tag">#optimization</a>
+                        <a href="#" class="tag">#corewebvitals</a>
+                        <a href="#" class="tag">#frontend</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">Mac<span>ford</span></div>
+                    <p>Helping developers and businesses create high-performance web experiences through expert consulting, development, and training.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="coding-resources.html">Coding Resources</a></li>
+                        <li><a href="#">Web Performance Guide</a></li>
+                        <li><a href="#">JavaScript Patterns</a></li>
+                        <li><a href="#">React Optimization</a></li>
+                        <li><a href="#">Accessibility Checklist</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get the latest web development tips and resources.</p>
+                    <form class="newsletter-form-footer">
+                        <input type="email" placeholder="Your email" class="newsletter-input-footer">
+                        <button type="submit" class="newsletter-btn-footer"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Macford. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script src="/JS/main.js"></script>
+    <script>
+        // Progress bar
+        window.onscroll = function() {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+            
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        };
+        
+        // Back to top functionality
+        document.querySelector('.back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
