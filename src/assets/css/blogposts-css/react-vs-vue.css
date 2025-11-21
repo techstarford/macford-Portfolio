@@ -1096,3 +1096,518 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Additional Responsive Styles for Mobile Devices */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .blog-page {
+    padding-top: 100px;
+  }
+  
+  .blog-post-image {
+    height: 200px;
+  }
+  
+  .blog-post-content {
+    padding: 20px;
+  }
+  
+  .blog-post-title {
+    font-size: 1.3rem;
+    line-height: 1.3;
+  }
+  
+  .blog-post-text h2 {
+    font-size: 1.3rem;
+  }
+  
+  .blog-post-text h3 {
+    font-size: 1.2rem;
+  }
+  
+  .blog-post-text pre {
+    padding: 10px;
+    font-size: 0.8rem;
+    overflow-x: auto;
+  }
+  
+  .blog-post-text table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .author-box {
+    padding: 20px;
+  }
+  
+  .author-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .comment-form {
+    padding: 20px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-input {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .newsletter-btn {
+    border-radius: 5px;
+  }
+}
+
+/* Specific fixes for Samsung Galaxy M13 and similar small devices */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .blog-post-title {
+    font-size: 1.2rem;
+  }
+  
+  .blog-post-meta {
+    font-size: 0.8rem;
+  }
+  
+  .blog-post-share {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .blog-post-tags {
+    gap: 5px;
+  }
+  
+  .blog-post-tag {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+  }
+  
+  .widget {
+    padding: 15px;
+  }
+  
+  .recent-post {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .recent-post-image {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Fix for navigation on very small screens */
+@media (max-width: 320px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .nav-links {
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+  
+  header.scrolled {
+    padding: 10px 0;
+  }
+}
+
+/* Improve sidebar layout on tablets */
+@media (max-width: 768px) {
+  .sidebar {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Fix code blocks responsiveness */
+@media (max-width: 768px) {
+  .blog-post-text pre code {
+    font-size: 0.85rem;
+  }
+}
+
+/* Improve comment section on mobile */
+@media (max-width: 576px) {
+  .comments-title {
+    font-size: 1.3rem;
+  }
+  
+  .comment {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .comment-content h5 {
+    font-size: 1rem;
+  }
+}
+
+/* Fix related posts grid on mobile */
+@media (max-width: 576px) {
+  .related-posts-title {
+    font-size: 1.5rem;
+  }
+  
+  .related-posts-grid {
+    gap: 20px;
+  }
+  
+  .related-post-content {
+    padding: 15px;
+  }
+  
+  .related-post-title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Fix for header and navigation on mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0;
+  }
+  
+  .navbar {
+    padding: 0 10px;
+  }
+  
+  .nav-links {
+    background: var(--darker);
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-links li {
+    margin: 0;
+    padding: 15px 0;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  
+  .nav-links a {
+    display: block;
+    padding: 10px 0;
+    font-size: 1.1rem;
+  }
+}
+
+/* Fix blog post content overflow */
+@media (max-width: 768px) {
+  .blog-post-text {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
+  .blog-post-text pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+  
+  .blog-post-text code {
+    white-space: pre-wrap;
+  }
+  
+  .blog-post-text table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .blog-post-text table th,
+  .blog-post-text table td {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+}
+
+/* Fix author box on mobile */
+@media (max-width: 576px) {
+  .author-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .author-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px;
+  }
+  
+  .author-info {
+    width: 100%;
+  }
+  
+  .author-social {
+    justify-content: center;
+    margin-top: 15px;
+  }
+}
+
+/* Fix comment section on mobile */
+@media (max-width: 576px) {
+  .comment {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .comment-avatar {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .comment-content {
+    width: 100%;
+  }
+  
+  /* Nested comments */
+  .comment .comment {
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-left: 15px;
+    border-left: 2px solid var(--primary);
+  }
+}
+
+/* Fix forms on mobile */
+@media (max-width: 576px) {
+  .comment-form {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    padding: 10px 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+  
+  textarea.form-control {
+    min-height: 120px;
+  }
+  
+  .submit-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Fix sidebar widgets on mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .widget {
+    padding: 20px;
+  }
+  
+  .categories-list li,
+  .tags-list li {
+    margin-bottom: 8px;
+  }
+  
+  .recent-post {
+    flex-direction: row;
+    text-align: left;
+  }
+  
+  .recent-post-image {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .recent-post-content h4 {
+    font-size: 0.85rem;
+    line-height: 1.3;
+  }
+}
+
+/* Fix search form */
+@media (max-width: 576px) {
+  .search-form {
+    margin-bottom: 10px;
+  }
+  
+  .search-input {
+    padding: 12px 15px 12px 40px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Fix newsletter forms */
+@media (max-width: 576px) {
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-input {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px 15px;
+  }
+  
+  .newsletter-btn {
+    border-radius: 5px;
+    padding: 12px;
+  }
+}
+
+/* Fix footer on mobile */
+@media (max-width: 768px) {
+  footer {
+    padding: 40px 0 20px;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .footer-links h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .footer-newsletter {
+    text-align: center;
+  }
+}
+
+/* Fix back to top button position */
+@media (max-width: 576px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+  }
+}
+
+/* Fix images in blog post */
+@media (max-width: 768px) {
+  .blog-post-image,
+  .related-post-image,
+  .recent-post-image {
+    height: auto;
+    max-height: 250px;
+  }
+}
+
+/* Fix code blocks and pre elements */
+@media (max-width: 480px) {
+  .blog-post-text pre {
+    padding: 8px;
+    font-size: 0.75rem;
+    border-radius: 5px;
+  }
+  
+  .blog-post-text code {
+    font-size: 0.8rem;
+    padding: 2px 4px;
+  }
+}
+
+/* Fix lists in blog post */
+@media (max-width: 576px) {
+  .blog-post-text ul,
+  .blog-post-text ol {
+    padding-left: 20px;
+    margin-left: 0;
+  }
+  
+  .blog-post-text li {
+    margin-bottom: 8px;
+  }
+}
+
+/* Fix share buttons */
+@media (max-width: 480px) {
+  .blog-post-share {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .blog-post-share span {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .blog-post-share a {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix tags on mobile */
+@media (max-width: 480px) {
+  .blog-post-tags {
+    gap: 8px;
+  }
+  
+  .blog-post-tag {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+}
+
+/* Ensure proper spacing on very small screens */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .blog-post-content {
+    padding: 15px;
+  }
+  
+  .widget {
+    padding: 15px;
+  }
+  
+  .section {
+    padding: 60px 0;
+  }
+  
+  .blog-page {
+    padding-top: 80px;
+  }
+}

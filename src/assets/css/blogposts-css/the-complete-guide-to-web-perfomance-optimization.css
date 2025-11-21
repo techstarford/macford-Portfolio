@@ -959,3 +959,448 @@ footer {
     justify-content: center;
   }
 }
+
+
+/* Fix for sidebar layout and images */
+@media (max-width: 992px) {
+  .blog-post {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .blog-sidebar {
+    width: 100%;
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .sidebar-widget {
+    margin-bottom: 0;
+  }
+
+  .author-info-small {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-sidebar {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .popular-post {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .popular-post-image {
+    width: 100%;
+    height: 120px;
+  }
+}
+
+/* Fix author image and avatar sizes */
+.author-avatar-small {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  display: block;
+  border: 3px solid var(--primary);
+}
+
+.author-info-small {
+  text-align: center;
+}
+
+.author-info-small p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Fix main author card */
+.author-card .author-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+}
+
+@media (max-width: 576px) {
+  .author-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .author-card .author-avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+  }
+
+  .author-info {
+    width: 100%;
+  }
+
+  .author-social {
+    justify-content: center;
+  }
+}
+
+/* Fix images in popular posts and related posts */
+.popular-post-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.related-post-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  .popular-post-image {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .related-post-image {
+    height: 160px;
+  }
+}
+
+/* Fix featured image */
+.post-featured-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .post-featured-image {
+    max-height: 300px;
+  }
+}
+
+/* Fix metric cards layout */
+.metric-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin: 30px 0;
+}
+
+@media (max-width: 480px) {
+  .metric-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .metric-card {
+    padding: 15px;
+  }
+
+  .metric-value {
+    font-size: 1.5rem;
+  }
+}
+
+/* Fix checklist items */
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.checklist-checkbox {
+  min-width: 22px;
+  height: 22px;
+  border: 2px solid var(--primary);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.checklist-content {
+  flex: 1;
+}
+
+@media (max-width: 576px) {
+  .checklist-item {
+    gap: 12px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+
+  .checklist-checkbox {
+    min-width: 20px;
+    height: 20px;
+  }
+
+  .checklist-content h4 {
+    font-size: 1rem;
+  }
+
+  .checklist-content p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Fix code blocks and pre elements */
+.post-content pre {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 25px 0;
+  box-shadow: var(--shadow-md);
+  font-size: 0.9rem;
+}
+
+.post-content pre code {
+  white-space: pre;
+  word-wrap: normal;
+}
+
+@media (max-width: 768px) {
+  .post-content pre {
+    padding: 15px;
+    font-size: 0.8rem;
+    margin: 20px -15px;
+    border-radius: 0;
+  }
+
+  .post-content pre code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+/* Fix table responsiveness */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+  display: block;
+  overflow-x: auto;
+}
+
+.post-content table th,
+.post-content table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .post-content table {
+    font-size: 0.9rem;
+  }
+
+  .post-content table th,
+  .post-content table td {
+    padding: 8px 10px;
+  }
+}
+
+/* Fix social share buttons */
+.social-share {
+  display: flex;
+  gap: 10px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .social-share {
+    justify-content: center;
+  }
+
+  .share-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Fix tags layout */
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 30px 0;
+}
+
+.post-tag {
+  padding: 6px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Fix newsletter forms */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: var(--light);
+  font-family: var(--font-secondary);
+  font-size: 16px; /* Prevent zoom on iOS */
+}
+
+.newsletter-btn {
+  padding: 12px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-main);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/* Fix footer newsletter form */
+.newsletter-form-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-input-footer {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: var(--light);
+  font-family: var(--font-secondary);
+}
+
+.newsletter-btn-footer {
+  padding: 12px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 577px) {
+  .newsletter-form-footer {
+    flex-direction: row;
+  }
+
+  .newsletter-input-footer {
+    border-radius: 5px 0 0 5px;
+    margin-bottom: 0;
+  }
+
+  .newsletter-btn-footer {
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+/* Fix related posts grid */
+.related-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+@media (max-width: 480px) {
+  .related-posts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .related-post-card {
+    text-align: center;
+  }
+}
+
+/* Ensure proper spacing */
+.blog-post {
+  padding: 120px 0 80px;
+}
+
+@media (max-width: 768px) {
+  .blog-post {
+    padding: 100px 0 60px;
+  }
+}
+
+/* Fix header spacing for mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0;
+  }
+
+  .nav-links {
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+}

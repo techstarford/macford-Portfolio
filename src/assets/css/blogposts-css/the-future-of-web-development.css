@@ -838,3 +838,474 @@ footer {
     justify-content: center;
   }
 }
+
+/* Fix for sidebar layout and images */
+@media (max-width: 992px) {
+  .blog-post-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .blog-sidebar {
+    width: 100%;
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .sidebar-widget {
+    margin-bottom: 0;
+  }
+
+  .author-bio {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-sidebar {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .popular-post {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .popular-post-image {
+    width: 100%;
+    height: 120px;
+  }
+}
+
+/* Fix author image and avatar sizes */
+.author-bio img {
+  width: 80px !important;
+  height: 80px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px !important;
+  display: block;
+  border: 3px solid var(--primary);
+}
+
+.author-bio {
+  text-align: center;
+}
+
+.author-bio p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Fix main author card */
+.author-card .author-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--primary);
+}
+
+@media (max-width: 576px) {
+  .author-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .author-card .author-avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+  }
+
+  .author-info {
+    width: 100%;
+  }
+
+  .author-social {
+    justify-content: center;
+  }
+}
+
+/* Fix images in popular posts and related posts */
+.popular-post-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.related-post-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+@media (max-width: 576px) {
+  .popular-post-image {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+
+  .related-post-image {
+    height: 160px;
+  }
+}
+
+/* Fix featured image */
+.post-featured-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .post-featured-image {
+    max-height: 300px;
+  }
+}
+
+/* Fix code blocks and pre elements */
+.post-content pre {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 25px 0;
+  box-shadow: var(--shadow-md);
+  font-size: 0.9rem;
+}
+
+.post-content pre code {
+  white-space: pre;
+  word-wrap: normal;
+}
+
+@media (max-width: 768px) {
+  .post-content pre {
+    padding: 15px;
+    font-size: 0.8rem;
+    margin: 20px -15px;
+    border-radius: 0;
+  }
+
+  .post-content pre code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+/* Fix social share buttons */
+.social-share {
+  display: flex;
+  gap: 10px;
+  margin: 30px 0;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .social-share {
+    justify-content: center;
+  }
+
+  .share-btn {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* Fix tags layout */
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 6px 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 30px 0;
+}
+
+.post-tag {
+  padding: 6px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Fix newsletter forms */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: var(--light);
+  font-family: var(--font-secondary);
+  font-size: 16px; /* Prevent zoom on iOS */
+}
+
+.newsletter-btn {
+  padding: 12px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: var(--font-main);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+/* Fix footer newsletter form */
+.newsletter-form-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-input-footer {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  color: var(--light);
+  font-family: var(--font-secondary);
+}
+
+.newsletter-btn-footer {
+  padding: 12px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 577px) {
+  .newsletter-form-footer {
+    flex-direction: row;
+  }
+
+  .newsletter-input-footer {
+    border-radius: 5px 0 0 5px;
+    margin-bottom: 0;
+  }
+
+  .newsletter-btn-footer {
+    border-radius: 0 5px 5px 0;
+  }
+}
+
+/* Fix related posts grid */
+.related-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+@media (max-width: 480px) {
+  .related-posts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .related-post-card {
+    text-align: center;
+  }
+}
+
+/* Fix categories list */
+.sidebar-widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-widget li {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-widget li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.sidebar-widget li a {
+  display: flex;
+  justify-content: space-between;
+  color: var(--light);
+  transition: all 0.3s ease;
+  padding: 8px 0;
+  font-size: 0.9rem;
+}
+
+.sidebar-widget li a:hover {
+  color: var(--primary);
+  padding-left: 10px;
+}
+
+/* Ensure proper spacing */
+.blog-post-container {
+  padding: 120px 0 80px;
+}
+
+@media (max-width: 768px) {
+  .blog-post-container {
+    padding: 100px 0 60px;
+  }
+}
+
+/* Fix header spacing for mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0;
+  }
+
+  .nav-links {
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+}
+
+/* Fix progress bar positioning */
+.progress-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  z-index: 1001;
+}
+
+/* Fix blockquote styling */
+.post-content blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 20px;
+  margin: 30px 0;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(108, 99, 255, 0.05);
+  padding: 20px;
+  border-radius: 0 8px 8px 0;
+}
+
+@media (max-width: 768px) {
+  .post-content blockquote {
+    margin: 20px -15px;
+    border-radius: 0;
+    padding: 15px;
+  }
+}
+
+/* Fix post meta alignment */
+.post-meta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--gray);
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 576px) {
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* Fix widget title consistency */
+.widget-title {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+  color: var(--light);
+}
+
+.widget-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+
+/* Fix popular posts links */
+.popular-post {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.popular-post:hover {
+  color: var(--primary);
+  transform: translateX(5px);
+}
+
+.popular-post:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}

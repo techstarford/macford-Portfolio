@@ -169,47 +169,47 @@
                         <h3>1. Edge Computing with Workers</h3>
                         <p>Platforms like Cloudflare Workers and Deno Deploy allow you to run code at the edge, closer to users:</p>
                         <pre><code>// Example Cloudflare Worker for A/B testing
-addEventListener('fetch', event => {
-    event.respondWith(handleRequest(event.request));
-});
+                            addEventListener('fetch', event => {
+                                event.respondWith(handleRequest(event.request));
+                            });
 
-async function handleRequest(request) {
-    // Serve different assets based on user location
-    const country = request.cf.country;
-    if (country === 'GB') {
-        return fetch('https://uk-cdn.example.com/optimized-assets');
-    }
-    return fetch('https://us-cdn.example.com/optimized-assets');
-}</code></pre>
+                            async function handleRequest(request) {
+                                // Serve different assets based on user location
+                                const country = request.cf.country;
+                                if (country === 'GB') {
+                                    return fetch('https://uk-cdn.example.com/optimized-assets');
+                                }
+                                return fetch('https://us-cdn.example.com/optimized-assets');
+                            }</code></pre>
 
                         <h3>2. Partial Hydration and Islands Architecture</h3>
                         <p>Modern frameworks like Astro and Marko.js allow you to hydrate only the interactive parts of your page:</p>
                         <pre><code>// Astro component example with partial hydration
----
-// Static at build time
-const posts = await fetch('https://api.example.com/posts').then(r => r.json());
----
+                        ---
+                        // Static at build time
+                        const posts = await fetch('https://api.example.com/posts').then(r => r.json());
+                        ---
 
-&lt;div>
-    &lt;!-- Static content --&gt;
-    {posts.map(post => (
-        &lt;article>
-            &lt;h2>{post.title}&lt;/h2>
-            &lt;p>{post.excerpt}&lt;/p>
-        &lt;/article>
-    ))}
+                        &lt;div>
+                            &lt;!-- Static content --&gt;
+                            {posts.map(post => (
+                                &lt;article>
+                                    &lt;h2>{post.title}&lt;/h2>
+                                    &lt;p>{post.excerpt}&lt;/p>
+                                &lt;/article>
+                            ))}
 
-    &lt;!-- Interactive component with client-side hydration --&gt;
-    &lt;Search client:load />
-&lt;/div></code></pre>
+                            &lt;!-- Interactive component with client-side hydration --&gt;
+                            &lt;Search client:load />
+                        &lt;/div></code></pre>
 
-                        <h3>3. Next-Gen Image Formats</h3>
-                        <p>AVIF adoption has grown significantly in 2024, offering superior compression to WebP:</p>
-                        <pre><code>&lt;picture>
-    &lt;source srcset="image.avif" type="image/avif">
-    &lt;source srcset="image.webp" type="image/webp">
-    &lt;img src="image.jpg" alt="Fallback for older browsers">
-&lt;/picture></code></pre>
+                                                <h3>3. Next-Gen Image Formats</h3>
+                                                <p>AVIF adoption has grown significantly in 2024, offering superior compression to WebP:</p>
+                                                <pre><code>&lt;picture>
+                            &lt;source srcset="image.avif" type="image/avif">
+                            &lt;source srcset="image.webp" type="image/webp">
+                            &lt;img src="image.jpg" alt="Fallback for older browsers">
+                        &lt;/picture></code></pre>
 
                         <h3>4. HTTP/3 and QUIC Protocol</h3>
                         <p>HTTP/3 adoption has reached 35% of websites, offering:</p>

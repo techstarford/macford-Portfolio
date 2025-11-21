@@ -970,3 +970,587 @@ footer {
     justify-content: center;
   }
 }
+
+/* Specific fixes for Samsung Galaxy M13 (360px) and similar small devices */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .blog-post-container {
+    padding-top: 100px;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .post-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+  
+  .post-content {
+    padding: 0 5px;
+  }
+  
+  .post-content h2 {
+    font-size: 1.4rem;
+  }
+  
+  .post-content h3 {
+    font-size: 1.2rem;
+  }
+  
+  .post-content pre {
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+  
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .author-card {
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .author-avatar {
+    margin: 0 auto 15px;
+  }
+  
+  .sidebar-widget {
+    padding: 15px;
+  }
+  
+  /* Fix for tool grid on very small screens */
+  .tool-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .tool-card {
+    padding: 15px;
+  }
+  
+  /* Fix for comparison slider */
+  .comparison-slider .slider-handle::after {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* Fix for table overflow */
+  .post-content table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .post-content th,
+  .post-content td {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Fix for iPhone 14 (390px) and similar devices */
+@media (max-width: 390px) and (min-width: 361px) {
+  .post-title {
+    font-size: 1.7rem;
+  }
+  
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .author-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .author-avatar {
+    margin: 0 auto 15px;
+  }
+}
+
+/* Fix for very small devices below 320px */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 8px;
+  }
+  
+  .post-title {
+    font-size: 1.5rem;
+  }
+  
+  .post-tags {
+    gap: 5px;
+  }
+  
+  .post-tag {
+    padding: 4px 12px;
+    font-size: 0.7rem;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  /* Even smaller adjustments */
+  .tool-icon {
+    font-size: 1.5rem;
+  }
+  
+  .tool-title {
+    font-size: 1rem;
+  }
+}
+
+/* Fix for tablet devices and landscape orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .nav-links {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  
+  .blog-post-container {
+    padding-top: 90px;
+  }
+  
+  /* Better video display in landscape */
+  .video-container {
+    margin: 20px 0;
+  }
+}
+
+/* Fix for sidebar grid layout on medium tablets */
+@media (max-width: 820px) and (min-width: 769px) {
+  .blog-sidebar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Enhanced responsive handling for interactive elements */
+.comparison-slider {
+  max-width: 100%;
+  touch-action: pan-y;
+}
+
+.comparison-slider .slider-handle {
+  touch-action: none;
+}
+
+/* Ensure images are responsive */
+.post-featured-image,
+.related-post-image,
+.popular-post-image,
+.tool-icon,
+.author-avatar {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for navigation on very small screens */
+@media (max-width: 340px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .hamburger {
+    transform: scale(0.9);
+  }
+}
+
+/* Fix for footer newsletter form on all mobile devices */
+@media (max-width: 768px) {
+  .footer-newsletter .newsletter-form-footer {
+    flex-direction: column;
+  }
+  
+  .footer-newsletter .newsletter-input-footer {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-newsletter .newsletter-btn-footer {
+    border-radius: 5px;
+    width: 100%;
+  }
+}
+
+/* Enhanced tool grid responsiveness */
+@media (max-width: 768px) {
+  .tool-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tool-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fix for the comparison slider on mobile */
+@media (max-width: 768px) {
+  .comparison-slider {
+    margin: 25px 0;
+  }
+  
+  .comparison-slider .slider-handle::after {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Additional mobile optimizations for video-heavy content */
+@media (max-width: 480px) {
+  .blog-post-container {
+    padding: 80px 0 40px;
+  }
+  
+  .post-title {
+    font-size: 1.8rem;
+  }
+  
+  .post-content h2 {
+    font-size: 1.5rem;
+  }
+  
+  .post-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  .post-content pre {
+    padding: 15px;
+    font-size: 0.9rem;
+  }
+  
+  /* Better spacing for video containers */
+  .video-container {
+    margin: 25px 0;
+  }
+  
+  /* Form adjustments */
+  .newsletter-input,
+  .newsletter-input-footer {
+    padding: 10px 12px;
+  }
+  
+  .newsletter-btn {
+    padding: 10px;
+  }
+  
+  /* Back to top button */
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  /* Table specific fixes */
+  .post-content table {
+    font-size: 0.8rem;
+  }
+  
+  .post-content th,
+  .post-content td {
+    padding: 8px 10px;
+  }
+}
+
+/* Special fixes for the tool cards */
+@media (max-width: 768px) {
+  .tool-card {
+    text-align: center;
+  }
+  
+  .tool-icon {
+    margin: 0 auto 15px;
+  }
+}
+
+/* Fix for the progress bar on mobile */
+.progress-container {
+  height: 3px;
+}
+
+.progress-bar {
+  height: 3px;
+}
+
+/* Ensure proper image rendering */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for the main featured image */
+.post-featured-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .post-featured-image {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .post-featured-image {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 360px) {
+  .post-featured-image {
+    max-height: 200px;
+  }
+}
+
+/* Enhanced overflow handling for code blocks */
+.post-content {
+  overflow-wrap: break-word;
+}
+
+.post-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+  background-color: #1e1e1e !important;
+}
+
+/* Fix for the sidebar widgets */
+@media (max-width: 992px) {
+  .blog-sidebar {
+    width: 100%;
+  }
+  
+  .sidebar-widget {
+    margin-bottom: 20px;
+  }
+}
+
+/* Fix for related posts grid */
+@media (max-width: 768px) {
+  .related-posts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .related-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Fix for popular posts in sidebar */
+@media (max-width: 768px) {
+  .popular-post {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .popular-post-image {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Enhanced nested elements for better mobile experience */
+@media (max-width: 576px) {
+  .post-content blockquote {
+    margin: 20px 0;
+    padding-left: 15px;
+  }
+  
+  .post-content ul,
+  .post-content ol {
+    padding-left: 15px;
+  }
+}
+
+/* Fix for the course cards in sidebar */
+@media (max-width: 768px) {
+  .course-card {
+    text-align: center;
+  }
+}
+
+/* Special handling for gear items */
+@media (max-width: 480px) {
+  .gear-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .gear-item img {
+    margin: 0 auto 10px;
+  }
+}
+
+/* Fix for the empty 375px media query - add these styles */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .post-title {
+    font-size: 1.6rem;
+  }
+  
+  .post-content {
+    padding: 0;
+  }
+  
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .author-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .related-posts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Optimize tool grid for 375px */
+  .tool-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  /* Better table display */
+  .post-content table {
+    font-size: 0.75rem;
+  }
+}
+
+/* Special handling for very long code examples */
+@media (max-width: 420px) {
+  .post-content pre {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+  
+  /* Compact code display for small screens */
+  .post-content pre code {
+    line-height: 1.4;
+  }
+}
+
+/* Fix for video container aspect ratio */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Enhanced touch interactions for mobile */
+@media (max-width: 768px) {
+  .tool-card,
+  .related-post-card,
+  .popular-post {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Better touch targets */
+  .post-tag,
+  .tag {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Fix for comparison slider touch interactions */
+.comparison-slider {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Loading optimization for mobile */
+@media (max-width: 768px) {
+  .post-featured-image,
+  .related-post-image,
+  .popular-post-image {
+    loading: lazy;
+  }
+}
+
+/* Improved scrolling performance */
+@media (max-width: 768px) {
+  .blog-post-container {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Fix for JavaScript-heavy interactive elements */
+@media (max-width: 768px) {
+  .comparison-slider {
+    transform: translateZ(0); /* Hardware acceleration */
+  }
+}
+
+/* Enhanced footer responsiveness */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+  
+  .footer-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0;
+  }
+}
+
+/* Final polish for very small screens */
+@media (max-width: 320px) {
+  .post-category {
+    font-size: 0.8rem;
+    padding: 6px 15px;
+  }
+  
+  .widget-title {
+    font-size: 1.1rem;
+  }
+  
+  .sidebar-widget {
+    padding: 12px;
+  }
+}

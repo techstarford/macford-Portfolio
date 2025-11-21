@@ -514,6 +514,28 @@ header.scrolled {
   margin-bottom: 1.5rem;
 }
 
+/* Force avatar images to be circular and properly sized */
+.comment-avatar {
+  width: 60px !important;
+  height: 60px !important;
+  min-width: 60px !important; /* Prevent shrinking */
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Fix for nested comments */
+.comment .comment {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+.comment .comment .comment-avatar {
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+}
+
 .form-group {
   margin-bottom: 20px;
 }
@@ -1099,3 +1121,371 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* Specific fixes for Samsung Galaxy M13 (360px) and similar small devices */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 10px;
+  }
+  
+  .blog-page {
+    padding-top: 100px;
+  }
+  
+  .blog-post-image {
+    height: 200px;
+  }
+  
+  .blog-post-title {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+  
+  .blog-post-content {
+    padding: 15px;
+  }
+  
+  .blog-post-text h2 {
+    font-size: 1.2rem;
+  }
+  
+  .blog-post-text h3 {
+    font-size: 1.1rem;
+  }
+  
+  .blog-post-text pre {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+  
+  .blog-post-share {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .blog-post-share span {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .author-box {
+    padding: 15px;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .author-avatar {
+    margin: 0 auto 15px;
+  }
+  
+  .comment-form {
+    padding: 15px;
+  }
+  
+  .widget {
+    padding: 15px;
+  }
+  
+  .footer-content {
+    gap: 20px;
+  }
+  
+  /* Fix for table responsiveness */
+  .blog-post-text table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .blog-post-text th,
+  .blog-post-text td {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Fix for iPhone 14 (390px) and similar devices */
+@media (max-width: 390px) and (min-width: 361px) {
+  .blog-post-image {
+    height: 220px;
+  }
+  
+  .blog-post-title {
+    font-size: 1.5rem;
+  }
+  
+  .blog-post-content {
+    padding: 18px;
+  }
+  
+  .blog-post-text pre {
+    font-size: 0.85rem;
+  }
+  
+  .author-box {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .author-avatar {
+    margin: 0 auto 15px;
+  }
+
+}
+
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .comment-avatar {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+  }
+  
+  .comment .comment .comment-avatar {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+  }
+  
+  .comment .comment {
+    margin-left: 20px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .comment {
+    flex-direction: column;
+  }
+  
+  .comment-avatar {
+    align-self: flex-start;
+    margin-bottom: 10px;
+  }
+}/* Fix for very small devices below 360px */
+
+/* Fix for very small devices below 320px */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 8px;
+  }
+  
+  .blog-post-image {
+    height: 180px;
+  }
+  
+  .blog-post-title {
+    font-size: 1.3rem;
+  }
+  
+  .blog-post-tags {
+    gap: 5px;
+  }
+  
+  .blog-post-tag {
+    padding: 3px 10px;
+    font-size: 0.7rem;
+  }
+  
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+}
+
+/* Fix for tablet devices and landscape orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .nav-links {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  
+  .blog-page {
+    padding-top: 90px;
+  }
+}
+
+/* Fix for sidebar grid layout on medium tablets */
+@media (max-width: 820px) and (min-width: 769px) {
+  .sidebar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Fix for code blocks overflow on all devices */
+.blog-post-text pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Ensure images are responsive */
+.blog-post-image,
+.related-post-image,
+.recent-post-image,
+.author-avatar,
+.comment-avatar {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for navigation on very small screens */
+@media (max-width: 340px) {
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .hamburger {
+    transform: scale(0.9);
+  }
+}
+
+/* Fix for footer newsletter form on all mobile devices */
+@media (max-width: 768px) {
+  .footer-newsletter .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .footer-newsletter .newsletter-input {
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-newsletter .newsletter-btn {
+    border-radius: 5px;
+    width: 100%;
+  }
+}
+
+/* Fix for the empty 375px media query - add these styles */
+@media (max-width: 375px) {
+  .container {
+    padding: 0 12px;
+  }
+  
+  .blog-post-image {
+    height: 220px;
+  }
+  
+  .blog-post-title {
+    font-size: 1.4rem;
+  }
+  
+  .blog-post-content {
+    padding: 18px;
+  }
+  
+  .blog-post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .author-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .comment {
+    flex-direction: column;
+  }
+  
+  .comment-avatar {
+    margin-bottom: 10px;
+  }
+  
+  .related-posts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+  .section {
+    padding: 70px 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .blog-post-text h2 {
+    font-size: 1.3rem;
+  }
+  
+  .blog-post-text h3 {
+    font-size: 1.1rem;
+  }
+  
+  .blog-post-text pre {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+  
+  /* Form adjustments */
+  .form-control,
+  .search-input,
+  .newsletter-input {
+    padding: 10px 12px;
+  }
+  
+  .submit-btn {
+    padding: 10px;
+  }
+  
+  /* Back to top button */
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+/* Fix for comments section on mobile */
+@media (max-width: 576px) {
+  .comments-section {
+    margin-bottom: 30px;
+  }
+  
+  .comment {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .comment-content h5 {
+    font-size: 1rem;
+  }
+  
+  .comment-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Fix for widget spacing on mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    gap: 20px;
+  }
+  
+  .widget {
+    margin-bottom: 0;
+  }
+}
+
+
+
+
+
+
+
